@@ -1,0 +1,13 @@
+#!/bin/bash
+
+cd ~/.vim
+if hash nvim 2>/dev/null; then VIM=nvim; else VIM=vim; fi
+if [[ $VIM == "nvim" && ! -e ~/.nvimrc ]]; then
+    echo "> Symlinking nvimrc -> vimrc"
+    ln -s ~/.vimrc ~/.nvimrc
+fi
+if [[ ! -e autoload/plug.vim ]]; then
+    echo "> Installing vim-plug"
+    curl --create-dirs -sfLo autoload/plug.vim "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+    $VIM +PlugInstall
+fi

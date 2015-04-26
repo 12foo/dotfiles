@@ -1,0 +1,23 @@
+# vim swaps + stuff
+*~
+*.sw*
+
+# sublime project files
+/*.sublime-*
+
+# eclipse
+.project
+.metadata
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+
+# idea
+.idea*

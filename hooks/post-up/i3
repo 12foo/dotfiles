@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [[ -e ~/.config/i3/base.config ]]; then
+    cd ~/.config/i3
+    cat base.config > config
+    if [[ -e machine.config ]]; then
+        echo "> Merging i3 machine config"
+        cat machine.config >> config
+    fi
+fi
