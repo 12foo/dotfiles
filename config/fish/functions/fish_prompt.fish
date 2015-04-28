@@ -117,7 +117,7 @@ function prompt_git -d "Display the actual git state"
     set branch_symbol \uE0A0
     set -l branch (echo $ref | sed  "s-refs/heads/-$branch_symbol -")
     if [ "$dirty" != "" ]
-      prompt_segment yellow black "$branch $dirty"
+      prompt_segment red black "$branch $dirty"
     else
       prompt_segment green black "$branch $dirty"
     end
