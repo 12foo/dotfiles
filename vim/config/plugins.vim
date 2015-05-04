@@ -31,6 +31,7 @@ Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'clojure' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
 Plug 'vim-scripts/vim-niji', { 'for': 'clojure' }
+Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
 
 " livescript
 Plug 'gkz/vim-ls', { 'for': 'livescript' }
@@ -40,4 +41,4 @@ Plug 'fatih/vim-go', { 'for': 'golang' }
 
 " ctrlp
 Plug 'kien/ctrlp.vim'
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|target'
