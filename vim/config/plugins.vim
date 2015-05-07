@@ -45,3 +45,4 @@ let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclu
 
 " supertab
 Plug 'ervandew/supertab'
+let g:SuperTabDefaultCompletionType = "\<c-x>\<c-o>"
