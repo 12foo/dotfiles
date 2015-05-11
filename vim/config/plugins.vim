@@ -32,6 +32,7 @@ Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
 Plug 'vim-scripts/vim-niji', { 'for': 'clojure' }
 Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
+Plug 'jebberjeb/grimoire.vim', { 'for': 'clojure' }
 
 " livescript
 Plug 'gkz/vim-ls', { 'for': 'livescript' }
