@@ -30,15 +30,16 @@ Plug 'guns/vim-sexp', { 'for': 'clojure' }
 Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'clojure' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
-Plug 'vim-scripts/vim-niji', { 'for': 'clojure' }
 Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
 Plug 'jebberjeb/grimoire.vim', { 'for': 'clojure' }
+Plug 'luochen1990/rainbow'
+let g:rainbow_active = 1
 
 " livescript
 Plug 'gkz/vim-ls', { 'for': 'livescript' }
 
 " go
-Plug 'fatih/vim-go', { 'for': 'golang' }
+Plug 'fatih/vim-go', { 'for': 'go' }
 
 " ctrlp
 Plug 'kien/ctrlp.vim'
@@ -47,3 +48,4 @@ let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclu
 " supertab
 Plug 'ervandew/supertab'
 let g:SuperTabDefaultCompletionType = "\<c-x>\<c-o>"
+
