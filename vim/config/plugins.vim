@@ -41,6 +41,9 @@ Plug 'gkz/vim-ls', { 'for': 'livescript' }
 " go
 Plug 'fatih/vim-go', { 'for': 'go' }
 
+" less
+Plug 'groenewege/vim-less'
+
 " ctrlp
 Plug 'kien/ctrlp.vim'
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
