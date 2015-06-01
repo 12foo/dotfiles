@@ -18,8 +18,18 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 " fugitive (git wrapper)
 Plug 'tpope/vim-fugitive'
 
+" commentary (comments)
+Plug 'tpope/vim-commentary'
+
 " syntastic (syntax checker)
 Plug 'scrooloose/syntastic'
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " indent guides
 Plug 'nathanaelkane/vim-indent-guides', { 'for': 'clojure' }
