@@ -17,12 +17,6 @@ let mapleader=","
 
 filetype off
 
-" buffers work like tabs
-set hidden
-noremap <C-PageDown> :bn<CR>
-noremap <C-PageUp> :bp<CR>
-noremap <C-w><C-w> :bd<CR>
-
 " highlight current line
 set cursorline
 hi cursorline guibg=#333333

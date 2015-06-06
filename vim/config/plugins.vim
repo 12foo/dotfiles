@@ -4,6 +4,9 @@ Plug 'tpope/vim-repeat'
 " zen coding
 Plug 'mattn/emmet-vim', { 'for': 'html' }
 
+" buffergator (<leader>b)
+Plug 'jeetsukumaran/vim-buffergator'
+
 " Powerline
 set laststatus=2
 set showtabline=2
