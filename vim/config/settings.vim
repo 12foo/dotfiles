@@ -17,6 +17,11 @@ let mapleader=","
 
 filetype off
 
+" bufeurs
+set hidden
+noremap <C-PageDown> :bn<CR>
+noremap <C-PageUp> :bp<CR>
+
 " highlight current line
 set cursorline
 hi cursorline guibg=#333333
