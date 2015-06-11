@@ -1,4 +1,5 @@
 " tim pope: cool guy 
+Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
@@ -59,7 +60,7 @@ Plug 'kien/ctrlp.vim'
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 " completion
-Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe', { 'for': ['go', 'python', 'javascript'] }
 
 " supertab
 Plug 'ervandew/supertab'
