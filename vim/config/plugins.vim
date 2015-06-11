@@ -1,5 +1,8 @@
-" repeatable mappings
+" tim pope: cool guy 
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-unimpaired'
 
 " zen coding
 Plug 'mattn/emmet-vim', { 'for': 'html' }
@@ -17,12 +20,6 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
-
-" fugitive (git wrapper)
-Plug 'tpope/vim-fugitive'
-
-" commentary (comments)
-Plug 'tpope/vim-commentary'
 
 " syntastic (syntax checker)
 Plug 'scrooloose/syntastic'
@@ -60,6 +57,9 @@ Plug 'groenewege/vim-less'
 " ctrlp
 Plug 'kien/ctrlp.vim'
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
+" completion
+Plug 'Valloric/YouCompleteMe'
 
 " supertab
 Plug 'ervandew/supertab'
