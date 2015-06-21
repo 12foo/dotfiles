@@ -10,3 +10,4 @@ runtime config/plugins.vim
 call plug#end()
 
 runtime config/settings.vim
+runtime config/aliases.vim
