@@ -36,6 +36,11 @@ let g:syntastic_check_on_wq = 0
 " indent guides
 Plug 'nathanaelkane/vim-indent-guides', { 'for': 'clojure' }
 
+" alignment
+Plug 'junegunn/vim-easy-align'
+vmap <Enter> <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+
 " clojure
 Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
 Plug 'guns/vim-sexp', { 'for': 'clojure' }
