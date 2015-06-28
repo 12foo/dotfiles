@@ -53,7 +53,8 @@ Plug 'luochen1990/rainbow'
 let g:rainbow_active = 1
 
 " livescript
-Plug 'gkz/vim-ls', { 'for': 'livescript' }
+Plug 'gkz/vim-ls', { 'for': 'ls' }
+au BufNewFile,BufReadPost *.ls setl shiftwidth=2 expandtab
 
 " go
 Plug 'fatih/vim-go', { 'for': 'go' }
