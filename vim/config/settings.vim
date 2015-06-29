@@ -39,6 +39,10 @@ set incsearch
 set ignorecase
 set smartcase
 
+" faster esc
+set timeoutlen=1000
+set ttimeoutlen=10
+
 " colorscheme etc
 filetype plugin indent on
 syntax on
