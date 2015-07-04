@@ -42,6 +42,7 @@ set smartcase
 " faster esc
 set timeoutlen=1000
 set ttimeoutlen=10
+set noesckeys
 
 " colorscheme etc
 filetype plugin indent on
