@@ -1,0 +1,16 @@
+packages: [
+  "atom-beautify"
+  "clojure-plus"
+  "ex-mode"
+  "expose"
+  "go-plus"
+  "lisp-paredit"
+  "markdown-table-formatter"
+  "markdown-writer"
+  "monokai"
+  "nrepl"
+  "package-sync"
+  "pigments"
+  "seti-ui"
+  "vim-mode"
+]
