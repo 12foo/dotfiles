@@ -2,7 +2,8 @@
 ;; This file is loaded by Spacemacs at startup.
 ;; It must be stored in your home directory.
 
-(setq evil-want-fine-undo 'no)
+(setq evil-want-fine-undo 'no
+      org-default-notes-file "~/ownCloud/notes.org")
 
 (defun dotspacemacs/layers ()
   "Configuration Layers declaration."
@@ -26,8 +27,7 @@
      emacs-lisp
      git
      markdown
-     ;; scala
-     ;; org
+     org
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
