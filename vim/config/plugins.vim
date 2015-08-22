@@ -28,6 +28,7 @@ Plug 'scrooloose/syntastic'
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+" let g:syntastic_mode_map = { 'passive_filetypes': ['go'] }
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -56,12 +57,16 @@ let g:rainbow_active = 1
 Plug 'gkz/vim-ls', { 'for': 'ls' }
 au BufNewFile,BufReadPost *.ls setl shiftwidth=2 expandtab
 
+Plug 'majutsushi/tagbar', { 'for': 'go' }
+au FileType go nmap <Leader><Leader> :TagbarOpenAutoClose<Enter>
+
 " go
 Plug 'fatih/vim-go', { 'for': 'go' }
-au FileType go nmap <Leader>gd <Plug>(go-doc)
-au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+let g:go_fmt_fail_silently = 0
+au FileType go nmap <Leader>D <Plug>(go-doc)
+au FileType go nmap <Leader>d <Plug>(go-info)
+au FileType go nmap <Leader>dv <Plug>(go-doc-vertical)
 au FileType go nmap <Leader>s <Plug>(go-implements)
-au FileType go nmap <Leader>i <Plug>(go-info)
 au FileType go nmap <Leader>e <Plug>(go-rename)
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1

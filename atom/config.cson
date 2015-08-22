@@ -10,7 +10,11 @@
     ]
   editor:
     invisibles: {}
+    fontFamily: "Source Code Pro"
   "go-plus":
     goPath: "~/coding/go"
   "vim-mode": {}
-  "lisp-paredit": {}
+  "lisp-paredit":
+    enabled: false
+  "atom-beautify":
+    _analyticsUserId: "45290bd6-0929-4c24-b9fb-6b024680fb55"
