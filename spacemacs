@@ -22,8 +22,11 @@
      ;; ----------------------------------------------------------------
      scala
      go
-     auto-completion
+     rust
      clojure
+     (auto-completion :variables
+                      auto-completion-enable-help-tooltip t)
+     syntax-checking
      better-defaults
      emacs-lisp
      git
@@ -162,13 +165,21 @@ before layers configuration."
    dotspacemacs-default-package-repository nil
    )
   ;; User initialization goes here
+
+  ;; clojure
+  (add-hook 'clojure-mode #'evil-cleverparens-mode)
+
+  ;; go
+  (setenv "PATH" (concat "~/coding/go/bin:" (getenv "PATH")))
+  (setenv "GOPATH" "~/coding/go")
+  (setenv "JAVA_HOME" "/usr/lib/jvm/default")
+  (setq exec-path (cons "~/coding/go/bin" exec-path))
+
+  ;; rust
+  (setenv "RUST_SRC_PATH" "/home/philipp/build/rust/src/")
   )
 
 (defun dotspacemacs/config ()
-  (add-hook 'clojure-mode #'evil-cleverparens-mode)
-  (setenv "PATH" (concat "~/coding/go/bin:" (getenv "PATH")))
-  (setenv "GOPATH" "~/coding/go")
-  (setq exec-path (cons "~/coding/go/bin" exec-path))
 )
 #'evil-cleverparens-mode
 ;; Do not write anything past this comment. This is where Emacs will

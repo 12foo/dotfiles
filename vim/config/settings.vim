@@ -3,7 +3,7 @@ set shiftwidth=4
 set expandtab
 set autoindent
 set backspace=indent,eol,start
-set completeopt=menu
+set completeopt=menuone,longest
 set grepprg=grep\ -nH\ $*
 set linebreak
 set t_Co=256

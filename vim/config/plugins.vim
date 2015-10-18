@@ -57,8 +57,19 @@ let g:rainbow_active = 1
 Plug 'gkz/vim-ls', { 'for': 'ls' }
 au BufNewFile,BufReadPost *.ls setl shiftwidth=2 expandtab
 
-Plug 'majutsushi/tagbar', { 'for': 'go' }
+" coffeescript
+Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
+
+" tagbar
+Plug 'majutsushi/tagbar', { 'for': [ 'go', 'rust' ] }
 au FileType go nmap <Leader><Leader> :TagbarOpenAutoClose<Enter>
+
+" rust
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+Plug 'racer-rust/vim-racer', { 'for': 'rust', 'do': 'cargo build --release' }
+let g:racer_cmd = "/home/philipp/build/racer/target/release/racer"
+let g:racer_experimental_completer = 1
+let $RUST_SRC_PATH="/home/philipp/build/rust/src/"
 
 " go
 Plug 'fatih/vim-go', { 'for': 'go' }
@@ -80,9 +91,6 @@ Plug 'groenewege/vim-less'
 " ctrlp
 Plug 'kien/ctrlp.vim'
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-
-" completion
-Plug 'Valloric/YouCompleteMe', { 'for': ['go', 'python', 'javascript'] }
 
 " supertab
 Plug 'ervandew/supertab'
