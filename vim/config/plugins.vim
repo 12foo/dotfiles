@@ -53,6 +53,10 @@ Plug 'jebberjeb/grimoire.vim', { 'for': 'clojure' }
 Plug 'luochen1990/rainbow'
 let g:rainbow_active = 1
 
+" vim-slime
+Plug 'jpalardy/vim-slime'
+let g:slime_target = "tmux"
+
 " livescript
 Plug 'gkz/vim-ls', { 'for': 'ls' }
 au BufNewFile,BufReadPost *.ls setl shiftwidth=2 expandtab
@@ -66,10 +70,13 @@ au FileType go nmap <Leader><Leader> :TagbarOpenAutoClose<Enter>
 
 " rust
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
-Plug 'racer-rust/vim-racer', { 'for': 'rust', 'do': 'cargo build --release' }
+Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 let g:racer_cmd = "/home/philipp/build/racer/target/release/racer"
 let g:racer_experimental_completer = 1
 let $RUST_SRC_PATH="/home/philipp/build/rust/src/"
+
+" julia
+Plug 'JuliaLang/julia-vim'
 
 " go
 Plug 'fatih/vim-go', { 'for': 'go' }

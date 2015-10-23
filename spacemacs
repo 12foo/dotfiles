@@ -24,6 +24,7 @@
      go
      rust
      clojure
+     scheme
      (auto-completion :variables
                       auto-completion-enable-help-tooltip t)
      syntax-checking
