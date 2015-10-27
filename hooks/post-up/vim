@@ -1,11 +1,12 @@
 #!/bin/bash
 
-cd ~/.vim
+mkdir -p ~/.config/nvim
+cd ~/.config/nvim
 if hash nvim 2>/dev/null; then VIM=nvim; else VIM=vim; fi
-if [[ $VIM == "nvim" && ! -e ~/.nvimrc ]]; then
-    echo "> Symlinking nvim -> vim"
-    ln -s ~/.vimrc ~/.nvimrc
-    ln -s ~/.vim ~/.nvim
+if [[ $VIM == "nvim" && ! -e ~/.vimrc ]]; then
+    echo "> Symlinking vim -> nvim"
+    ln -s ~/.config/nvim/init.vim ~/.vimrc
+    ln -s ~/.config/nvim ~/.vim
 fi
 if [[ ! -e autoload/plug.vim ]]; then
     echo "> Installing vim-plug"
