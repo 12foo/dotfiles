@@ -9,9 +9,8 @@ set linebreak
 set t_Co=256
 let maplocalleader=","
 set number
-set nobackup
-set noswapfile
 set pastetoggle=<F2>
+set timeoutlen=1000 ttimeoutlen=0
 
 let mapleader=","
 
