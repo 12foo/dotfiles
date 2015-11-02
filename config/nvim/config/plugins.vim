@@ -35,12 +35,14 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 " indent guides
-Plug 'nathanaelkane/vim-indent-guides', { 'for': 'clojure' }
+Plug 'nathanaelkane/vim-indent-guides'
+
+" pandoc & markdown
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
 
 " alignment
-Plug 'junegunn/vim-easy-align'
-vmap <Enter> <Plug>(EasyAlign)
-nmap ga <Plug>(EasyAlign)
+Plug 'godlygeek/tabular'
 
 " clojure
 Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
