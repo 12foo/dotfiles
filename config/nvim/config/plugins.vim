@@ -40,6 +40,8 @@ Plug 'nathanaelkane/vim-indent-guides'
 " pandoc & markdown
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
+let g:pandoc#modules#disabled = ['folding', 'spell']
+au FileType pandoc nmap <Leader><Leader> :TOC<Enter>
 
 " alignment
 Plug 'godlygeek/tabular'
