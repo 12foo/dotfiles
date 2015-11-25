@@ -6,6 +6,10 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-unimpaired'
 
+" vim wiki
+Plug 'vimwiki/vimwiki'
+let g:vimwiki_list = [{'path': '~/ownCloud/research/wiki/', 'syntax': 'markdown', 'ext': '.md'}]
+
 " zen coding
 Plug 'mattn/emmet-vim', { 'for': 'html' }
 
