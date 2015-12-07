@@ -177,6 +177,7 @@ class Wifi(Widget):
 class MPD(Widget):
     icon_paused = ' \ue059 '
     icon_playing = ' \ue05c '
+    audio_files = ['mp3', 'ogg', 'flac', 'mp4', 'm4a']
     @staticmethod
     def available():
         try:
@@ -197,6 +198,8 @@ class MPD(Widget):
             self.status = 'stopped'
         else:
             self.song = status[0]
+            if self.song.rsplit('.', 1)[1].lower() in self.audio_files:
+                self.song = self.song.rsplit('/', 1)[1]
             self.status = status[1].split(None, 1)[0][1:-1]
     def render(self):
         if self.status == 'playing':
