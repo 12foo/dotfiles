@@ -19,6 +19,9 @@ modes = {
         ('desk-hdmi', ['HDMI1'], defkb),
         ('present', ['LVDS1', 'VGA1'], 'thinkpad gb'),
     ],
+    'rigg': [
+        ('default', ['DVI-I-1'], defkb),
+    ],
 }
 
 # edit this function to autoselect specific modes based on type and

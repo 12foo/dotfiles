@@ -1,0 +1,9 @@
+#!/bin/sh
+
+export GTK_THEME=Arc:dark
+export PATH=/home/philipp/bin:$PATH
+export EDITOR=nvim
+export TERMINAL=st
+xrdb ~/.Xresources
+exec herbstluftwm --locked
+
