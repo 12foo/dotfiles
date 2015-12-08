@@ -18,4 +18,4 @@ bargeometry="${mgeom[2]}x$barheight+0+0"
 
 herbstclient pad $monitor $(expr $barheight)
 
-python $DIR/topbar.py | lemonbar -d -p -g $bargeometry -f $font1,$font2 -F $color_foreground -B $color_background
+python $DIR/topbar.py | lemonbar -u 2 -d -p -g $bargeometry -f $font1,$font2 -F $color_foreground -B $color_background

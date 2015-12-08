@@ -28,7 +28,10 @@ def file_contents(f):
         return None
 
 def output_of(cmd):
-    return subprocess.run(cmd, stdout=subprocess.PIPE).stdout.decode('utf-8').strip()
+    try:
+        return subprocess.run(cmd, stdout=subprocess.PIPE).stdout.decode('utf-8').strip()
+    except:
+        return None
 
 class Widget(object):
     @staticmethod
@@ -119,7 +122,7 @@ class PulseAudio(Widget):
     @staticmethod
     def available():
         try:
-            subprocess.run(['pactl', 'info'], check=True)
+            subprocess.run(['pactl', 'info'], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             return True
         except:
             return False
@@ -166,7 +169,10 @@ class Wifi(Widget):
     icon = ' \ue048 '
     @staticmethod
     def available():
-        return len(output_of(['iw', 'dev'])) > 0
+        try:
+            return len(output_of(['iw', 'dev'])) > 0
+        except:
+            return False
     def render(self):
         strength = 0.0
         iw = output_of(['iwgetid']).split()
@@ -196,7 +202,7 @@ class MPD(Widget):
     @staticmethod
     def available():
         try:
-            subprocess.run(['mpc'], check=True)
+            subprocess.run(['mpc'], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             return True
         except:
             return False
