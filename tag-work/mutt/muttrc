@@ -1,0 +1,25 @@
+set move = no
+set markers = no
+set imap_keepalive = 60
+set sort = "threads"
+set sort_aux = "reverse-last-date-received"
+set editor = "nvim"
+set mailcap_path = "~/.mutt/mailcap"
+set sleep_time = 0
+set pager_context = 3
+set pager_stop = yes
+set fast_reply = yes
+set include = yes
+
+bind index "^" imap-fetch-mail
+
+auto_view text/html
+alternative_order text/plain text/html
+
+source "~/.mutt/colors"
+source "~/.mutt/macros"
+
+folder-hook . "push <collapse-all>\n"
+folder-hook "ex.uni-paderborn.de" "source ~/.mutt/upb/settings"
+
+source "~/.mutt/upb/settings"

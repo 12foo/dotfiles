@@ -96,6 +96,8 @@ class Filesystems(Widget):
         return self.icon + fg(color['muted'], ' | ').join('%s %s' % (f[0], fg(color['muted'], f[1])) for f in fs)
 
 class Battery(Widget):
+    icons = [chr(c) for c in ([int(0xe242)] + list(range(int(0xe24c), int(0xe255))))]
+    icon_charging = '\ue239'
     @staticmethod
     def available():
         return file_contents('/sys/class/power_supply/BAT0/present') == '1'
@@ -106,14 +108,21 @@ class Battery(Widget):
             charge = 0
         c = color['bad'] if charge < 30 else color['good']
         if file_contents('/sys/class/power_supply/BAT0/status') != 'Discharging':
-            icon = ' %{T2}\ue239%{T1} '
+            icon = ' %%{T2}%s%%{T1} ' % self.icon_charging
         else:
-            icon = ' %{T2}\ue236%{T1} '
+            icon = ' %%{T2}%s%%{T1} ' % self.icons[round(charge / 100 * len(self.icons))]
         return fg(c, icon) + str(charge)
 
 class PulseAudio(Widget):
     icon_loud = ' \ue05d '
     icon_mute = ' \ue04f '
+    @staticmethod
+    def available():
+        try:
+            subprocess.run(['pactl', 'info'], check=True)
+            return True
+        except:
+            return False
     def __init__(self, pipe, hooks):
         client = subprocess.Popen(['pactl', 'subscribe'], stdout=pipe)
         atexit.register(client.kill)
@@ -157,22 +166,28 @@ class Wifi(Widget):
     icon = ' \ue048 '
     @staticmethod
     def available():
-        return len(file_contents('/proc/net/wireless').split('\n')) >= 3
+        return len(output_of(['iw', 'dev'])) > 0
     def render(self):
-        iw = output_of(['iwgetid']).split()
-        profile = iw[1]
         strength = 0.0
-        if 'ESSID' not in profile:
-            profile = fg(color['muted'], 'disabled')
+        iw = output_of(['iwgetid']).split()
+        profile = ''
+        if len(iw) < 2 or 'ESSID' not in iw[1]:
+            profile = fg(color['muted'], 'connecting')
         else:
-            profile = profile[7:-1]
-            for line in file_contents('/proc/net/wireless').split('\n')[2:]:
-                cols = line.split()
-                if cols[0][:-1] == iw[0]:
-                    strength = float(cols[2])
-                    break
+            profile = iw[1][7:-1]
+            if profile == '':
+                profile = fg(color['muted'], 'disconnected')
+            else:
+                for line in file_contents('/proc/net/wireless').split('\n')[2:]:
+                    cols = line.split()
+                    if cols[0][:-1] == iw[0]:
+                        strength = float(cols[2])
+                        break
         c = color['good'] if strength > 40 else color['bad']
-        return fg(c, self.icon) + profile + ' ' + fg(color['muted'], str(int(strength)))
+        profile = fg(c, self.icon) + profile
+        if strength > 0:
+            profile += ' ' + fg(color['muted'], str(int(strength)))
+        return profile
 
 class MPD(Widget):
     icon_paused = ' \ue059 '

@@ -12,6 +12,9 @@ set number
 set pastetoggle=<F2>
 set timeoutlen=1000 ttimeoutlen=0
 
+" transparency
+autocmd ColorScheme * highlight Normal ctermbg=none
+
 let mapleader=","
 
 filetype off

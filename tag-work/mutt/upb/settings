@@ -1,0 +1,13 @@
+set folder = imaps://phirus@ex.uni-paderborn.de/
+set smtp_url = smtps://phirus@mail.uni-paderborn.de
+set header_cache = "~/.mutt/upb/cache"
+set message_cachedir = "~/.mutt/upb/cache"
+
+set realname = "Philipp Rustemeier"
+set from = philipp.rustemeier@uni-paderborn.de
+set signature = "~/.mutt/upb/signature"
+
+set spoolfile = +INBOX
+set postponed = +Drafts
+set record = +Sent
+

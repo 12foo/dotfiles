@@ -124,16 +124,16 @@ hc attr theme.tiling.reset 1
 hc attr theme.floating.reset 1
 hc set frame_bg_transparent 1
 hc set frame_transparent_width 0
-hc set frame_gap 12
+hc set frame_gap 10
 hc set window_gap 0
 hc set frame_padding 0
 hc set smart_window_surroundings 1
 hc set smart_frame_surroundings 0
 hc set mouse_recenter_gap 0
 
-hc set frame_border_width 5
+hc set frame_border_width 3
 hc set frame_border_active_color "#ffffff"
-hc set frame_border_normal_color "#999999"
+hc set frame_border_normal_color "#bbbbbb"
 hc attr theme.border_width 1
 
 hc set default_frame_layout 2
