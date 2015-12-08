@@ -268,4 +268,5 @@ if __name__ == '__main__':
         # render
         if updated:
             print(''.join(w.render() for w in ws))
-        sys.stdout.flush()
+            sys.stdout.flush()
+
