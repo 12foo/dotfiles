@@ -4,7 +4,6 @@ set imap_keepalive = 60
 set sort = "threads"
 set sort_aux = "reverse-last-date-received"
 set editor = "nvim"
-set mailcap_path = "~/.mutt/mailcap"
 set sleep_time = 0
 set pager_context = 3
 set pager_stop = yes
