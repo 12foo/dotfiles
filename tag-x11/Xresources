@@ -1,4 +1,51 @@
-URxvt.font: xft:Profont:pixelsize=12
+! special
+*.foreground:   #999999
+*.background:   #282f3a
+*.cursorColor:  #999999
+
+! black
+*.color0:       #292929
+*.color8:       #525252
+
+! red
+*.color1:       #cf6a4c
+*.color9:       #ff9d80
+
+! green
+*.color2:       #19cb00
+*.color10:      #23fd00
+
+! yellow
+*.color3:       #fad07a
+*.color11:      #ffefbf
+
+! blue
+*.color4:       #8197bf
+*.color12:      #accaff
+
+! magenta
+*.color5:       #8787af
+*.color13:      #c4c4ff
+
+! cyan
+*.color6:       #668799
+*.color14:      #80bfaf
+
+! white
+*.color7:       #888888
+*.color15:      #e8e8d3
+
+URxvt*.letterSpace: -2
+URxvt*.font: xft:Hack:size=9:antialias=true
+URxvt*.boldFont: xft:Hack:size=9:bold:antialias=true
+URxvt*.depth: 32
+URxvt*.background: [80]#282f3a
+URxvt*.perl-ext-common: default,matcher
+URxvt*.url-launcher: /usr/bin/firefox
+URxvt*.matcher.button: 1
+URxvt*.keysym.C-Delete: perl:matcher:last
+URxvt*.keysym.M-Delete: perl:matcher:list
+
 
 rofi.modi:                           window,run,ssh,combi
 rofi.opacity:                        100
