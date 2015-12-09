@@ -9,7 +9,6 @@ set linebreak
 let maplocalleader=","
 set number
 set pastetoggle=<F2>
-set timeoutlen=1000 ttimeoutlen=0
 
 let mapleader=","
 
@@ -40,7 +39,8 @@ set ignorecase
 set smartcase
 
 " faster esc
-set timeoutlen=50
+set timeoutlen=1000
+set ttimeoutlen=50
 set noesckeys
 
 filetype plugin indent on
