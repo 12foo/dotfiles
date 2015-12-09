@@ -28,7 +28,7 @@ Mod=Mod4   # Use the super key as the main modifier
 
 hc keybind $Mod-Shift-q quit
 hc keybind $Mod-r spawn rofi -columns 3 -show run -sidebar-mode true
-hc keybind $Mod-p spawn sh $CONF/switch.sh
+hc keybind $Mod-p spawn sh $CONF/switch.sh screen
 hc keybind Mod1-Tab spawn rofi -show window
 hc keybind $Mod-Shift-r reload
 hc keybind $Mod-c close_or_remove
@@ -119,6 +119,7 @@ hc keybind Mod5-XF86AudioPlay spawn mpc stop
 hc keybind XF86AudioPlay spawn mpc toggle
 hc keybind XF86AudioNext spawn mpc next
 hc keybind XF86AudioPrev spawn mpc prev
+hc keybind $Mod-XF86AudioPlay spawn sh $CONF/switch.sh song
 
 # theme
 hc attr theme.tiling.reset 1

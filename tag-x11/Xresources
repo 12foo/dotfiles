@@ -60,7 +60,6 @@ URxvt.keysym.C-Next: \033[6;5~
 
 rofi.font: Hack 10
 rofi.padding: 6
-rofi.fuzzy: true
 rofi.separator-style: solid
 rofi.hide-scrollbar: true
 rofi.width: 40
