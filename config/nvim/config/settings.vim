@@ -6,14 +6,10 @@ set backspace=indent,eol,start
 set completeopt=menuone,longest
 set grepprg=grep\ -nH\ $*
 set linebreak
-set t_Co=256
 let maplocalleader=","
 set number
 set pastetoggle=<F2>
 set timeoutlen=1000 ttimeoutlen=0
-
-" transparency
-autocmd ColorScheme * highlight Normal ctermbg=none
 
 let mapleader=","
 
@@ -21,8 +17,10 @@ filetype off
 
 " bufeurs
 set hidden
-noremap <C-PageDown> :bn<CR>
-noremap <C-PageUp> :bp<CR>
+nnoremap <C-PageDown> :bn<CR>
+nnoremap <C-PageUp> :bp<CR>
+inoremap <C-PageDown> <Esc>:bn<CR>
+inoremap <C-PageUp> <Esc>:bp<CR>
 
 " highlight current line
 set cursorline
@@ -42,14 +40,18 @@ set ignorecase
 set smartcase
 
 " faster esc
-set timeoutlen=1000
-set ttimeoutlen=10
+set timeoutlen=50
 set noesckeys
 
-" colorscheme etc
 filetype plugin indent on
 syntax on
 set wildignore+=.*
+
 set background=dark
+let g:jellybeans_term_italics = 1
 colorscheme jellybeans
+" set transparency AFTER airline has loaded or the colors get messed up
+" (airline uses theme's colors to generate its own)
+autocmd User AirlineAfterInit highlight Normal ctermbg=none
+autocmd User AirlineAfterInit highlight NonText ctermbg=none
 

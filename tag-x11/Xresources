@@ -12,8 +12,8 @@
 *.color9:       #ff9d80
 
 ! green
-*.color2:       #19cb00
-*.color10:      #23fd00
+*.color2:       #359b26
+*.color10:      #75c469 green
 
 ! yellow
 *.color3:       #fad07a
@@ -32,63 +32,36 @@
 *.color14:      #80bfaf
 
 ! white
-*.color7:       #888888
+*.color7:       #999999
 *.color15:      #e8e8d3
 
-URxvt*.letterSpace: -2
-URxvt*.font: xft:Hack:size=9:antialias=true
-URxvt*.boldFont: xft:Hack:size=9:bold:antialias=true
-URxvt*.depth: 32
-URxvt*.background: [80]#282f3a
-URxvt*.perl-ext-common: default,matcher
-URxvt*.url-launcher: /usr/bin/firefox
-URxvt*.matcher.button: 1
-URxvt*.keysym.C-Delete: perl:matcher:last
-URxvt*.keysym.M-Delete: perl:matcher:list
+URxvt*letterSpace: -1
+URxvt*font: xft:Hack:size=10:antialias=true
+URxvt*boldFont: xft:Hack:size=10:bold:antialias=true
+URxvt*italicFont: xft:Hack:size=10:italic:antialias=true
+URxvt*bolditalicFont: xft:Hack:size=10:bold:italic:antialias=true
+URxvt*keysym.C-0: command:\033]710;xft:Hack:size=10:antialias=true\007\033]711;xft:Hack:size=10:bold:antialias=true\007\033]712;xft:Hack:size=10:italic:antialias=true\007\033]713;xft:Hack:size=10:bold:italic:antialias=true\007
+URxvt*keysym.C-minus: command:\033]710;xft:Hack:size=9:antialias=true\007\033]711;xft:Hack:size=9:bold:antialias=true\007\033]712;xft:Hack:size=9:italic:antialias=true\007\033]713;xft:Hack:size=9:bold:italic:antialias=true\007
+URxvt*keysym.C-plus: command:\033]710;xft:Hack:size=11:antialias=true\007\033]711;xft:Hack:size=11:bold:antialias=true\007\033]712;xft:Hack:size=11:italic:antialias=true\007\033]713;xft:Hack:size=11:bold:italic:antialias=true\007
+URxvt*depth: 32
+URxvt*background: [90]#141618
+URxvt*perl-ext-common: default,matcher
+URxvt*url-launcher: /usr/bin/firefox
+URxvt*matcher.button: 1
+URxvt*keysym.C-Delete: perl:matcher:last
+URxvt*keysym.M-Delete: perl:matcher:list
+URxvt*scrollBar: false
+URxvt*scrollTtyOutput: false
+URxvt*scrollWithBuffer: true
+URxvt*scrollTtyKeypress: true
+! hacky hack to make ctrl-pgup/pgdn work in vim
+URxvt.keysym.C-Prior: \033[5;5~
+URxvt.keysym.C-Next: \033[6;5~
 
-
-rofi.modi:                           window,run,ssh,combi
-rofi.opacity:                        100
-rofi.width:                          80
-rofi.lines:                          20
-rofi.columns:                        1
-rofi.font:                           Ubuntu Mono 12
-rofi.fg:                             #efefef
-rofi.color-enabled:                  true
-#define itembg argb:EF101010
-#define selbg #9fbc00
-!    STATE             BG         FG        BGALT     HLBG      HLFG
-rofi.color-normal:     itembg,    #cecece,  itembg,   selbg,  black
-rofi.color-urgent:     #D6156C,   white,    #D6156C,  #dc322f,  selbg
-rofi.color-active:     #101010,   #FFE352,  #101010,  selbg,  black
-rofi.color-window:     argb:EE242424,black,argb:EE242424
-rofi.hide-scrollbar:   true
-!rofi.fg-active:                      #268BD2
-!rofi.fg-urgent:                      #DC322F
-!rofi.hlfg-active:                    #FDF6E3
-!rofi.hlfg-urgent:                    #FDF6E3
-!rofi.bg-active:                      #FDF6E3
-!rofi.bg-urgent:                      #FDF6E3
-!rofi.hlbg-active:                    #268BD2
-!rofi.hlbg-urgent:                    #DC322F
-!rofi.bgalt:                          #FDF6E3
-!rofi.hlfg:                           #EEE8D5
-!rofi.hlbg:                           #586E75
-rofi.bc:                             #9fbc00
-rofi.terminal:                       st -- dvtm -M
-rofi.sidebar-mode:                   true
-rofi.fixed-num-lines:                false
-rofi.bw:                             1
-rofi.lazy-filter-limit:              5000000
-!             1 2 3
-!             8 0 4
-!             7 6 5
-rofi.location:                       0
-rofi.padding:                        3
-rofi.line-margin:                    1
-rofi.separator-style:                solid
-rofi.m:                              -2
-rofi.yoffset:                        0
-rofi.xoffset:                        0
-rofi.eh:                             1
-rofi.levenshtein-sort:               false
+rofi.font: Hack 10
+rofi.padding: 6
+rofi.fuzzy: true
+rofi.separator-style: solid
+rofi.hide-scrollbar: true
+rofi.width: 40
+rofi.terminal: urxvt

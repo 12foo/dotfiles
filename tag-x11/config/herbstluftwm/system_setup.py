@@ -2,8 +2,8 @@
 
 import os, sys, subprocess, socket, collections
 
-# default keyboard layout (either 'layout' or 'model layout')
-defkb = 'de(nodeadkeys)'
+# default keyboard layout (either 'layout1,layout2/variant' or 'model layout,layout/variant')
+defkb = 'de/nodeadkeys'
 
 # default keyboard options
 kbopt = ['-option', 'grp:shifts_toggle', '-option', 'compose:caps']
@@ -72,10 +72,14 @@ def set_xrandr(mode, monitors):
 def set_keyboard(kb):
     sx = ['setxkbmap'] + kbopt
     if ' ' in kb:
-        model, layout = kb.split(None, 1)
+        model, layouts = kb.split(None, 1)
         sx.extend(['-model', model])
-        kb = layout
-    sx.extend([kb])
+    else:
+        layouts = kb
+    layouts, _, variants = zip(*(l.partition('/') for l in layouts.split(',')))
+    sx.extend(['-layout', ','.join(layouts)])
+    if len(variants) > 0:
+        sx.extend(['-variant', ','.join(variants)])
     subprocess.run(sx)
 
 def set_wm(mode, monitors):

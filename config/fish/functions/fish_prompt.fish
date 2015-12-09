@@ -143,7 +143,7 @@ end
 
 function prompt_venv -d "Display Python virtualenv"
     if set -q VIRTUAL_ENV
-        prompt_segment blue white (basename "$VIRTUAL_ENV")
+        prompt_segment blue black (basename "$VIRTUAL_ENV")
     end
 end
 

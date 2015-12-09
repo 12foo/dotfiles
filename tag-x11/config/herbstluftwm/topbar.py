@@ -63,7 +63,7 @@ class Text(Widget):
         return self.text
 
 class HLWM(Widget):
-    tagicons = ['\ue00e', '\ue072', '\ue1ce', '\ue1a0']
+    tagicons = ['\ue00e', '\ue1a8', '\ue1ce', '\ue1a0']
 
     def __init__(self, pipe, hooks):
         self.client = subprocess.Popen(['herbstclient', '--idle', 'tag_changed'], stdout=pipe)
@@ -94,7 +94,7 @@ class Filesystems(Widget):
     dfcmd = ['df', '-h', '-x', 'tmpfs', '-x', 'devtmpfs', '--output=target,avail']
     icon = fg(color['good'], ' %{T2}\ue1e1%{T1} ')
     def render(self):
-        df = output_of(self.dfcmd).split('\n')[1:]
+        df = output_of(self.dfcmd).splitlines()[1:]
         fs = ((f[0], f[1]) for f in (f.strip().split() for f in df) if f[0] != '/boot')
         return self.icon + fg(color['muted'], ' | ').join('%s %s' % (f[0], fg(color['muted'], f[1])) for f in fs)
 
@@ -133,7 +133,7 @@ class PulseAudio(Widget):
         self.mute = False
         hooks["Event 'change' on sink"] = self
     def update(self, line):
-        painfo = output_of(['pactl', 'info']).split('\n')
+        painfo = output_of(['pactl', 'info']).splitlines()
         look_for = None
         for l in painfo:
             if l.startswith('Default Sink:'):
@@ -141,7 +141,7 @@ class PulseAudio(Widget):
                 break
         in_sink = False
         look_for = 'Name: ' + look_for
-        sink_list = output_of(['pactl', 'list', 'sinks']).split('\n')
+        sink_list = output_of(['pactl', 'list', 'sinks']).splitlines()
         for l in sink_list:
             if not in_sink:
                 if look_for in l:
@@ -184,7 +184,7 @@ class Wifi(Widget):
             if profile == '':
                 profile = fg(color['muted'], 'disconnected')
             else:
-                for line in file_contents('/proc/net/wireless').split('\n')[2:]:
+                for line in file_contents('/proc/net/wireless').splitlines()[2:]:
                     cols = line.split()
                     if cols[0][:-1] == iw[0]:
                         strength = float(cols[2])
@@ -213,7 +213,7 @@ class MPD(Widget):
         self.status = 'stopped'
         hooks['player'] = self
     def update(self, line):
-        status = output_of('mpc').split('\n')
+        status = output_of('mpc').splitlines()
         if len(status) < 3:
             self.song = ''
             self.status = 'stopped'
@@ -257,7 +257,7 @@ if __name__ == '__main__':
         updated = False
         if len(ready) > 0:
             for p in ready:
-                lines = os.read(p, 4096).decode('utf-8').split('\n')
+                lines = os.read(p, 4096).decode('utf-8').splitlines()
                 for line in lines:
                     for first, hook in hooks.items():
                         if line.startswith(first):

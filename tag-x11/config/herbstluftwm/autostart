@@ -27,12 +27,12 @@ hc keyunbind --all
 Mod=Mod4   # Use the super key as the main modifier
 
 hc keybind $Mod-Shift-q quit
-hc keybind $Mod-r spawn rofi -columns 3 -show run
+hc keybind $Mod-r spawn rofi -columns 3 -show run -sidebar-mode true
 hc keybind $Mod-p spawn sh $CONF/switch.sh
 hc keybind Mod1-Tab spawn rofi -show window
 hc keybind $Mod-Shift-r reload
 hc keybind $Mod-c close_or_remove
-hc keybind $Mod-Return urxvt
+hc keybind $Mod-Return spawn urxvt
 hc keybind $Mod-Shift-Return spawn $HOME/bin/i3-shell.sh
 
 # basic movement
