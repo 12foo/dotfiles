@@ -1,5 +1,5 @@
 ! special
-*.foreground:   #999999
+*.foreground:   #cccccc
 *.background:   #282f3a
 *.cursorColor:  #999999
 
@@ -32,9 +32,10 @@
 *.color14:      #80bfaf
 
 ! white
-*.color7:       #999999
+*.color7:       #dddddd
 *.color15:      #e8e8d3
 
+URxvt*intensityStyles: false
 URxvt*letterSpace: -1
 URxvt*font: xft:Hack:size=10:antialias=true
 URxvt*boldFont: xft:Hack:size=10:bold:antialias=true
