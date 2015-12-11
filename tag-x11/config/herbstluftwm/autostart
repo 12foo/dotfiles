@@ -112,8 +112,9 @@ hc keybind $Mod-Shift-Tab   cycle -1
 hc keybind $Mod-i jumpto urgent
 
 # media keys
-hc keybind XF86AudioRaiseVolume spawn pactl -- set-sink-volume @DEFAULT_SINK@ +5%
-hc keybind XF86AudioLowerVolume spawn pactl -- set-sink-volume @DEFAULT_SINK@ -5%
+hc keybind XF86AudioRaiseVolume spawn pactl -- set-sink-volume @DEFAULT_SINK@ +3%
+hc keybind XF86AudioLowerVolume spawn pactl -- set-sink-volume @DEFAULT_SINK@ -3%
+hc keybind $Mod+XF86AudioLowerVolume spawn pactl -- set-sink-volume @DEFAULT_SINK@ 30%
 hc keybind XF86AudioMute spawn pactl -- set-sink-mute @DEFAULT_SINK@ toggle
 hc keybind Mod5-XF86AudioPlay spawn mpc stop
 hc keybind XF86AudioPlay spawn mpc toggle
