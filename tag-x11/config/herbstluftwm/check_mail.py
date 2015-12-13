@@ -13,7 +13,7 @@
 # SMTP: your.smtp-server.domain
 
 from imaplib import IMAP4, IMAP4_SSL
-from poplib import POP3
+from poplib import POP3, POP3_SSL
 import subprocess, pickle, time, sys, os, socket
 
 def get_credentials(name):
@@ -65,6 +65,15 @@ class MailChecker(object):
                     if ok != 'OK':
                         return None
                     return int(status[0].strip().decode('utf-8').split(None, 1)[1][1:-1].split(None)[3])
+                except:
+                    return None
+        elif proto == 'pop3':
+            with POP3_SSL(domain) as M:
+                try:
+                    M.user(user)
+                    M._pass(password)
+                    count, _ = M.stat()
+                    return count
                 except:
                     return None
         return None
