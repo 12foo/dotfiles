@@ -10,15 +10,17 @@ set pager_stop = yes
 set fast_reply = yes
 set include = yes
 
-bind index "^" imap-fetch-mail
-
 auto_view text/html
 alternative_order text/plain text/html
 
 source "~/.mutt/colors"
 source "~/.mutt/macros"
 
+macro index,pager gu "<change-folder>imaps://phirus@ex.uni-paderborn.de<enter>"
+macro index,pager gp "<change-folder>imaps://philipp@pontydysgu.org@imap.gmail.com<enter>"
+
 folder-hook . "push <collapse-all>\n"
 folder-hook "ex.uni-paderborn.de" "source ~/.mutt/upb/settings"
+folder-hook "philipp@pontydysgu.org@imap.gmail.com" "source ~/.mutt/ponty/settings"
 
 source "~/.mutt/upb/settings"
