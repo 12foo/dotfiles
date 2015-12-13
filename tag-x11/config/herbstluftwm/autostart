@@ -123,7 +123,8 @@ hc keybind XF86AudioPrev spawn mpc prev
 hc keybind $Mod-XF86AudioPlay spawn sh $CONF/switch.sh song
 
 # other tools
-hc keybind $Mod-m spawn python $CONF/check_mail.py update
+# update email indicator
+hc keybind $Mod-m spawn rm /tmp/.check-mail
 
 # theme
 hc attr theme.tiling.reset 1
