@@ -79,7 +79,7 @@ au FileType go nmap <Leader><Leader> :TagbarOpenAutoClose<Enter>
 " rust
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'racer-rust/vim-racer', { 'for': 'rust' }
-let g:racer_cmd = "/home/philipp/.cargo/bin/racer"
+let g:racer_cmd = "/home/philipp/.multirust/toolchains/stable/cargo/bin/racer"
 let g:racer_experimental_completer = 1
 let $RUST_SRC_PATH="/home/philipp/build/rust/src/"
 
