@@ -1,5 +1,9 @@
 #!/bin/sh
 
+if ! pidof keychain; then
+    keychain --agents gpg,ssh -Q 0x745DCF6EF373E467
+fi
+
 export GTK_THEME=Arc:dark
 export PATH=/home/philipp/bin:$PATH
 export EDITOR=nvim

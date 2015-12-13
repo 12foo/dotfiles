@@ -1,5 +1,8 @@
 set folder = imaps://phirus@ex.uni-paderborn.de/
 set smtp_url = smtps://phirus@mail.uni-paderborn.de
+set imap_pass = `pass show email/upb | head -n 1`
+set smtp_pass = `pass show email/upb | head -n 1`
+
 set header_cache = "~/.mutt/upb/cache"
 set message_cachedir = "~/.mutt/upb/cache"
 

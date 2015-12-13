@@ -229,9 +229,29 @@ class MPD(Widget):
             return self.icon_paused + fg(color['muted'], self.song)
         return ''
 
+class Mail(Widget):
+    icon = '\ue1a8'
+    @staticmethod
+    def available():
+        return os.path.isdir(os.path.expanduser('~/.mutt')) and os.path.isdir(os.path.expanduser('~/.password-store'))
+    def __init__(self, pipe, hooks):
+        from check_mail import MailChecker
+        self.checker = MailChecker()
+    def render(self):
+        new = []
+        c = color['good']
+        for acct, mails in self.checker.current_status().items():
+            if mails is None:
+                c = color['bad']
+                new.append(acct + ' ' + fg(color['bad'], 'error'))
+            elif mails > 0:
+                new.append(acct + ' ' + fg(color['muted'], str(mails)))
+        if len(new) > 0:
+            return fg(c, self.icon) + ' ' + fg(color['muted'], ' | ').join(new)
+        else:
+            return ''
 
-
-widgets = ['%{l}', HLWM, MPD, '%{c}', '%{r}', Filesystems, Wifi, Battery, PulseAudio, Clock]
+widgets = ['%{l}', HLWM, MPD, '%{c}', Mail, '%{r}', Filesystems, Wifi, Battery, PulseAudio, Clock]
 
 if __name__ == '__main__':
     sread, swrite = os.pipe()
