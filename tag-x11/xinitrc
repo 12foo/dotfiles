@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if ! pidof keychain; then
-    keychain --agents gpg,ssh -Q 0x745DCF6EF373E467
+    keychain --agents gpg,ssh
 fi
 
 export GTK_THEME=Arc:dark
