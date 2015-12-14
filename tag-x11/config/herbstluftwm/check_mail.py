@@ -80,11 +80,11 @@ class MailChecker(object):
 
     def update(self):
         if os.fork() == 0:
-            if not self.is_connected():
-                os._exit(0)
             with open(self.cache_file + '.running', 'a'):
                 os.utime(self.cache_file + '.running', None)
-            accts = {acct: self.check(creds) for acct, creds in self.accounts.items()}
+            accts = {}
+            if self.is_connected():
+                accts = {acct: self.check(creds) for acct, creds in self.accounts.items()}
             check = {'last_check': int(time.time()), 'accounts': accts}
             with open(self.cache_file, 'wb') as cache:
                 pickle.dump(check, cache, pickle.HIGHEST_PROTOCOL)

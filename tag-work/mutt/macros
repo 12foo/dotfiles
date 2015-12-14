@@ -1,4 +1,5 @@
 bind index "^" imap-fetch-mail
+bind index,pager A group-reply
 macro index,pager ut <tag-thread><limit>~T<enter><tag-thread> "show only current thread"
 macro index,pager ua <limit>all<enter> "show everything"
 
