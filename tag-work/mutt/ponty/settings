@@ -1,0 +1,16 @@
+set folder = imaps://philipp@pontydysgu.org@imap.gmail.com/
+set smtp_url = smtps://philipp@pontydysgu.org@smtp.gmail.com
+set imap_pass = `pass show email/ponty | head -n 1`
+set smtp_pass = `pass show email/ponty | head -n 1`
+
+set header_cache = "~/.mutt/ponty/cache"
+set message_cachedir = "~/.mutt/ponty/cache"
+
+set realname = "Philipp Rustemeier"
+set from = philipp@pontydysgu.org
+unset signature
+
+set spoolfile = +INBOX
+set postponed = +[Gmail]/Drafts
+set record = ""
+
