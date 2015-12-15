@@ -14,10 +14,10 @@ kbopt = ['-option', 'grp:shifts_toggle', '-option', 'compose:caps']
 # forced resolution
 modes = {
     'tacito': [
-        ('laptop', ['LVDS1'], 'thinkpad gb'),
+        ('laptop', ['LVDS1'], 'thinkpad us'),
         ('desk-vga', ['VGA1'], defkb),
         ('desk-hdmi', ['HDMI1'], defkb),
-        ('present', ['LVDS1', 'VGA1'], 'thinkpad gb'),
+        ('present', ['LVDS1', 'VGA1'], 'thinkpad us'),
     ],
     'rigg': [
         ('default', ['DVI-I-1'], defkb),

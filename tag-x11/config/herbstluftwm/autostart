@@ -87,6 +87,8 @@ for i in ${!tag_names[@]} ; do
         hc keybind "$Mod-Shift-$key" move_index "$i"
     fi
 done
+hc keybind Mod1-Control-Right use_index +1
+hc keybind Mod1-Control-Left use_index -1
 
 # cycle through tags
 hc keybind $Mod-period use_index +1 --skip-visible
@@ -135,7 +137,7 @@ hc set frame_gap 12
 hc set window_gap 0
 hc set frame_padding 0
 hc set smart_window_surroundings 0
-hc set smart_frame_surroundings 0
+hc set smart_frame_surroundings 1
 hc set mouse_recenter_gap 0
 
 hc set frame_border_width 2
