@@ -137,8 +137,10 @@ hc set frame_gap 12
 hc set window_gap 0
 hc set frame_padding 0
 hc set smart_window_surroundings 0
-hc set smart_frame_surroundings 1
+hc set smart_frame_surroundings 0
 hc set mouse_recenter_gap 0
+hc keybind $Mod-Shift-m toggle smart_frame_surroundings
+
 
 hc set frame_border_width 2
 hc set frame_border_active_color "#ffffff"
