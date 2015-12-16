@@ -113,7 +113,7 @@ class Battery(Widget):
         if file_contents('/sys/class/power_supply/BAT0/status') != 'Discharging':
             icon = ' %%{T2}%s%%{T1} ' % self.icon_charging
         else:
-            icon = ' %%{T2}%s%%{T1} ' % self.icons[round(charge / 100 * len(self.icons))]
+            icon = ' %%{T2}%s%%{T1} ' % self.icons[round(charge / 100 * (len(self.icons) - 1))]
         return fg(c, icon) + str(charge)
 
 class PulseAudio(Widget):
