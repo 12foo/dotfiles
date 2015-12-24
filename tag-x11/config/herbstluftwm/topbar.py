@@ -177,7 +177,9 @@ class Wifi(Widget):
         strength = 0.0
         iw = output_of(['iwgetid']).split()
         profile = ''
-        if len(iw) < 2 or 'ESSID' not in iw[1]:
+        if len(iw) == 0:
+            profile = fg(color['muted'], 'disconnected')
+        elif len(iw) < 2 or 'ESSID' not in iw[1]:
             profile = fg(color['muted'], 'connecting')
         else:
             profile = iw[1][7:-1]
