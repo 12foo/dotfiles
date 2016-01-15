@@ -65,9 +65,8 @@ let g:rainbow_active = 1
 Plug 'jpalardy/vim-slime'
 let g:slime_target = "tmux"
 
-" livescript
-Plug 'gkz/vim-ls', { 'for': 'ls' }
-au BufNewFile,BufReadPost *.ls setl shiftwidth=2 expandtab
+" elm
+Plug 'lambdatoast/elm.vim'
 
 " coffeescript
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
