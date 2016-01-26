@@ -18,8 +18,6 @@ fileext = .ics
 
 [storage owncloud_remote]
 type = caldav
-verify = false
-verify_fingerprint = 4D:6C:98:06:BD:19:2C:46:A9:2E:CD:34:52:28:79:6B:DA:4B:06:F6
 url = https://owncloud.teamalbin.de/remote.php/caldav/
 username = philipp
 password.fetch = ["prompt", "owncloud password"]
