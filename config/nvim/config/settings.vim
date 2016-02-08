@@ -48,7 +48,7 @@ syntax on
 set wildignore+=.*
 
 set background=dark
-let g:jellybeans_term_italics = 1
+let g:jellybeans_use_term_italics = 1
 colorscheme jellybeans
 " set transparency AFTER airline has loaded or the colors get messed up
 " (airline uses theme's colors to generate its own)
