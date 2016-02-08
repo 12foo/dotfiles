@@ -49,9 +49,6 @@ set wildignore+=.*
 
 set background=dark
 let g:jellybeans_use_term_italics = 1
+let g:airline_theme = 'bubblegum'
 colorscheme jellybeans
-" set transparency AFTER airline has loaded or the colors get messed up
-" (airline uses theme's colors to generate its own)
-autocmd User AirlineAfterInit highlight Normal ctermbg=none
-autocmd User AirlineAfterInit highlight NonText ctermbg=none
 
