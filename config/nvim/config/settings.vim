@@ -49,6 +49,6 @@ set wildignore+=.*
 
 set background=dark
 let g:jellybeans_use_term_italics = 1
-let g:airline_theme = 'bubblegum'
+let g:airline_theme = 'distinguished'
 colorscheme jellybeans
 
