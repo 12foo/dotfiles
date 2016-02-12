@@ -35,8 +35,16 @@
 *.color7:       #dddddd
 *.color15:      #e8e8d3
 
+! fonts
+Xft.dpi: 96
+Xft.antialias: true
+Xft.rgba: none
+Xft.hinting: true
+Xft.autohint: true
+Xft.hintstyle: hintslight
+
 URxvt*intensityStyles: false
-URxvt*letterSpace: -1
+! URxvt*letterSpace: -1
 URxvt*font: xft:Hack:pixelsize=13:antialias=true
 URxvt*boldFont: xft:Hack:pixelsize=13:bold:antialias=true
 URxvt*italicFont: xft:Hack:pixelsize=13:italic:antialias=true
