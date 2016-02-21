@@ -14,5 +14,9 @@ case "$1" in
     song)
         mpc playlist | rofi -p 'jump to song: ' -dmenu -i --only-match -format d | xargs mpc play
         ;;
+    password)
+        cd ~/.password-store
+        find . -name *.gpg | cut -c 3- | sed 's/.gpg//' | rofi -p "grab password: " -width 20 -dmenu | xargs pass -c
+        ;;
 esac
 

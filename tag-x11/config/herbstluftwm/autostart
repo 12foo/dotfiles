@@ -29,6 +29,7 @@ Mod=Mod4   # Use the super key as the main modifier
 hc keybind $Mod-Shift-q quit
 hc keybind $Mod-r spawn rofi -columns 3 -show run -sidebar-mode true
 hc keybind $Mod-p spawn sh $CONF/switch.sh screen
+hc keybind $Mod-w spawn sh $CONF/switch.sh password
 hc keybind Mod1-Tab spawn rofi -show window
 hc keybind $Mod-Shift-r reload
 hc keybind $Mod-c close_or_remove
