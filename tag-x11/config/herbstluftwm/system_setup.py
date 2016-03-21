@@ -21,6 +21,7 @@ modes = {
     ],
     'rigg': [
         ('default', ['DVI-I-1'], defkb),
+        ('tv-2nd', ['DVI-I-1', 'HDMI-0 1920x1080'], defkb),
     ],
 }
 
@@ -86,8 +87,13 @@ def set_wm(mode, monitors):
     rects = []
     xval = 0
     for m in mode:
-        rects.append('%s+%d+0' % (monitors[m], xval))
-        xval += int(monitors[m].split('x', 1)[0])
+        if ' ' in m:
+            output, geom = m.split(None, 1)
+            rects.append('%s+%d+0' % (geom, xval))
+            xval += int(geom.split('x', 1)[0])
+        else:
+            rects.append('%s+%d+0' % (monitors[m], xval))
+            xval += int(monitors[m].split('x', 1)[0])
     hc = ['herbstclient', 'set_monitors'] + rects
     subprocess.run(hc)
 

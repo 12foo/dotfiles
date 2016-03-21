@@ -72,6 +72,9 @@ Plug 'lambdatoast/elm.vim'
 " coffeescript
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 
+" elixir
+Plug 'elixir-lang/vim-elixir'
+
 " tagbar
 Plug 'majutsushi/tagbar', { 'for': [ 'go', 'rust' ] }
 au FileType go nmap <Leader><Leader> :TagbarOpenAutoClose<Enter>
@@ -82,9 +85,6 @@ Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 let g:racer_cmd = "/home/philipp/.multirust/toolchains/stable/cargo/bin/racer"
 let g:racer_experimental_completer = 1
 let $RUST_SRC_PATH="/home/philipp/build/rust/src/"
-
-" julia
-Plug 'JuliaLang/julia-vim'
 
 " go
 Plug 'fatih/vim-go', { 'for': 'go' }
