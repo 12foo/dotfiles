@@ -13,8 +13,9 @@ let g:vimwiki_list = [{'path': '~/ownCloud/research/wiki/', 'syntax': 'markdown'
 " zen coding
 Plug 'mattn/emmet-vim', { 'for': 'html' }
 
-" buffergator (<leader>b)
-Plug 'jeetsukumaran/vim-buffergator'
+" supertab
+Plug 'ervandew/supertab'
+let g:SuperTabDefaultCompletionType = "\<c-x>\<c-u>\<c-p>"
 
 " Powerline
 set laststatus=2
@@ -76,8 +77,9 @@ Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 Plug 'elixir-lang/vim-elixir'
 
 " tagbar
-Plug 'majutsushi/tagbar', { 'for': [ 'go', 'rust' ] }
+Plug 'majutsushi/tagbar', { 'for': [ 'go', 'rust', 'cpp' ] }
 au FileType go nmap <Leader><Leader> :TagbarOpenAutoClose<Enter>
+au FileType cpp nmap <Leader><Leader> :TagbarOpenAutoClose<Enter>
 
 " rust
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
@@ -100,14 +102,16 @@ let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 
+" clang completion
+Plug 'Rip-Rip/clang_complete'
+let g:syntastic_cpp_compiler = 'clang++'
+let g:clang_complete_auto = 0
+let g:clang_complete_copen = 1
+
 " less
 Plug 'groenewege/vim-less'
 
 " ctrlp
 Plug 'kien/ctrlp.vim'
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-
-" supertab
-Plug 'ervandew/supertab'
-let g:SuperTabDefaultCompletionType = "\<c-x>\<c-o>"
 

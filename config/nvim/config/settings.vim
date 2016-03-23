@@ -3,12 +3,15 @@ set shiftwidth=4
 set expandtab
 set autoindent
 set backspace=indent,eol,start
-set completeopt=menuone,longest
+set completeopt=menu,menuone,longest
+set pumheight=30
 set grepprg=grep\ -nH\ $*
 set linebreak
 let maplocalleader=","
 set number
 set pastetoggle=<F2>
+set conceallevel=2
+set concealcursor=vin
 
 let mapleader=","
 
