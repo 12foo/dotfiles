@@ -11,7 +11,6 @@ let maplocalleader=","
 set number
 set pastetoggle=<F2>
 set conceallevel=2
-set concealcursor=vin
 
 let mapleader=","
 
