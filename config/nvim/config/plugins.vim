@@ -6,6 +6,9 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-unimpaired'
 
+" editorconfig
+Plug 'editorconfig/editorconfig-vim'
+
 " vim wiki
 Plug 'vimwiki/vimwiki'
 let g:vimwiki_list = [{'path': '~/ownCloud/research/wiki/', 'syntax': 'markdown', 'ext': '.md'}]
@@ -75,6 +78,9 @@ Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 
 " elixir
 Plug 'elixir-lang/vim-elixir'
+
+" stylus stylesheets
+Plug 'wavded/vim-stylus'
 
 " tagbar
 Plug 'majutsushi/tagbar', { 'for': [ 'go', 'rust', 'cpp' ] }
