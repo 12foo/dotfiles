@@ -74,3 +74,8 @@ rofi.separator-style: solid
 rofi.hide-scrollbar: true
 rofi.width: 40
 rofi.terminal: urxvt
+rofi.color-enabled: true
+rofi.color-window: #282f3a, #282f3a, #1e2529
+rofi.color-normal: #282f3a, #c1c1c1, #282f3a, #394249, #ffffff
+rofi.color-active: #282f3a, #80cbc4, #282f3a, #394249, #80cbc4
+rofi.color-urgent: #282f3a, #ff1844, #282f3a, #394249, #ff1844
