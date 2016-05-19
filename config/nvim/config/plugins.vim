@@ -18,7 +18,7 @@ Plug 'mattn/emmet-vim', { 'for': 'html' }
 
 " supertab
 Plug 'ervandew/supertab'
-let g:SuperTabDefaultCompletionType = "\<c-x>\<c-u>\<c-p>"
+let g:SuperTabDefaultCompletionType = "context"
 
 " Powerline
 set laststatus=2
@@ -90,7 +90,7 @@ au FileType cpp nmap <Leader><Leader> :TagbarOpenAutoClose<Enter>
 " rust
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'racer-rust/vim-racer', { 'for': 'rust' }
-let g:racer_cmd = "/home/philipp/.multirust/toolchains/stable/cargo/bin/racer"
+let g:racer_cmd = "/home/philipp/.cargo/bin/racer"
 let g:racer_experimental_completer = 1
 let $RUST_SRC_PATH="/home/philipp/build/rust/src/"
 
