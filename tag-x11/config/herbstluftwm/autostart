@@ -120,6 +120,7 @@ hc keybind XF86AudioLowerVolume spawn pactl -- set-sink-volume @DEFAULT_SINK@ -3
 hc keybind $Mod+XF86AudioLowerVolume spawn pactl -- set-sink-volume @DEFAULT_SINK@ 30%
 hc keybind XF86AudioMute spawn pactl -- set-sink-mute @DEFAULT_SINK@ toggle
 hc keybind Mod5-XF86AudioPlay spawn mpc stop
+hc keybind XF86AudioStop spawn mpc stop
 hc keybind XF86AudioPlay spawn mpc toggle
 hc keybind XF86AudioNext spawn mpc next
 hc keybind XF86AudioPrev spawn mpc prev
