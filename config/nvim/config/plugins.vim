@@ -95,13 +95,14 @@ let g:racer_experimental_completer = 1
 let $RUST_SRC_PATH="/home/philipp/build/rust/src/"
 
 " go
-Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'fatih/vim-go'
 let g:go_fmt_fail_silently = 0
 au FileType go nmap <Leader>D <Plug>(go-doc)
 au FileType go nmap <Leader>d <Plug>(go-info)
 au FileType go nmap <Leader>dv <Plug>(go-doc-vertical)
 au FileType go nmap <Leader>s <Plug>(go-implements)
 au FileType go nmap <Leader>e <Plug>(go-rename)
+au FileType go setlocal omnifunc=go#complete#Complete
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
