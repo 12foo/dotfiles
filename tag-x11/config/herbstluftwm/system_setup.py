@@ -23,6 +23,10 @@ modes = {
         ('default', ['DVI-I-1'], defkb),
         ('tv-2nd', ['DVI-I-1', 'HDMI-0 1920x1080'], defkb),
     ],
+    'bison': [
+        ('default', ['DVI-D-0'], defkb),
+        ('tv-2nd', ['DVI-D-0', 'HDMI-0 1920x1080'], defkb),
+    ],
 }
 
 # edit this function to autoselect specific modes based on type and
