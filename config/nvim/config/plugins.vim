@@ -61,7 +61,6 @@ Plug 'guns/vim-sexp', { 'for': 'clojure' }
 Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'clojure' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
-Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
 Plug 'jebberjeb/grimoire.vim', { 'for': 'clojure' }
 Plug 'luochen1990/rainbow'
 let g:rainbow_active = 1
@@ -88,11 +87,13 @@ au FileType go nmap <Leader><Leader> :TagbarOpenAutoClose<Enter>
 au FileType cpp nmap <Leader><Leader> :TagbarOpenAutoClose<Enter>
 
 " rust
-Plug 'rust-lang/rust.vim', { 'for': 'rust' }
-Plug 'racer-rust/vim-racer', { 'for': 'rust' }
+Plug 'rust-lang/rust.vim'
+Plug 'racer-rust/vim-racer'
 let g:racer_cmd = "/home/philipp/.cargo/bin/racer"
+let $CARGO_HOME = "/home/philipp/.cargo"
+let $RUST_SRC_PATH = "/home/philipp/build/rust/src"
+" let $RUST_SRC_PATH = system("rustc --print sysroot")
 let g:racer_experimental_completer = 1
-let $RUST_SRC_PATH="/home/philipp/build/rust/src/"
 
 " go
 Plug 'fatih/vim-go'
