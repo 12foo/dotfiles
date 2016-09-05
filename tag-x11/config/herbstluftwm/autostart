@@ -126,6 +126,9 @@ hc keybind XF86AudioNext spawn mpc next
 hc keybind XF86AudioPrev spawn mpc prev
 hc keybind $Mod-XF86AudioPlay spawn sh $CONF/switch.sh song
 
+# tag stashing
+hc keybind $Mod-asciicircum spawn sh $CONF/stash.sh
+
 # other tools
 # update email indicator
 hc keybind $Mod-m spawn rm /tmp/.check-mail
