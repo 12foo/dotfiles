@@ -71,7 +71,7 @@ class HLWM(Widget):
         self.tags = []
         hooks['tag_changed'] = self
     def update(self, line):
-        self.tags = (t for t in output_of(['herbstclient', 'tag_status']).split() if t[1] != "!")
+        self.tags =  [t for t in output_of(['herbstclient', 'tag_status']).split() if t[1] != "!"]
     def render(self):
         out = '%{T2}'
         empty = ' \ue0e6 '
