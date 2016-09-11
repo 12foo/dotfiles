@@ -221,7 +221,7 @@ class MPD(Widget):
             self.status = 'stopped'
         else:
             self.song = status[0]
-            if '.' in self.song[-5:] and self.song.rsplit('.', 1)[1].lower() in self.audio_files:
+            if '.' in self.song[-5:] and self.song.rsplit('.', 1)[1].lower() in self.audio_files and '/' in self.song:
                 self.song = self.song.rsplit('/', 1)[1]
             self.status = status[1].split(None, 1)[0][1:-1]
     def render(self):
