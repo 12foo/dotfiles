@@ -50,6 +50,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 let g:pandoc#modules#disabled = ['folding', 'spell']
+let g:pandoc#biblio#use_bibtool = 1
 au FileType pandoc nmap <Leader><Leader> :TOC<Enter>
 
 " alignment
