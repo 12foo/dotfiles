@@ -92,8 +92,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'racer-rust/vim-racer'
 let g:racer_cmd = "/home/philipp/.cargo/bin/racer"
 let $CARGO_HOME = "/home/philipp/.cargo"
-let $RUST_SRC_PATH = "/home/philipp/build/rust/src"
-" let $RUST_SRC_PATH = system("rustc --print sysroot")
+let $RUST_SRC_PATH = systemlist("rustc --print sysroot")[0] . "/lib/rustlib/src/rust/src"
 let g:racer_experimental_completer = 1
 
 " go
