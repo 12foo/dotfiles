@@ -45,6 +45,13 @@ set timeoutlen=1000
 set ttimeoutlen=50
 set noesckeys
 
+" ALWAYS HARDCORE
+noremap <Up> <nop>
+noremap <Down> <nop>
+noremap <Left> <nop>
+noremap <Right> <nop>
+inoremap jj <Esc>
+
 filetype plugin indent on
 syntax on
 set wildignore+=.*
