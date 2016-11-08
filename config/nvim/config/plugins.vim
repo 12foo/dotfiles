@@ -68,12 +68,6 @@ let g:rainbow_active = 1
 Plug 'jpalardy/vim-slime'
 let g:slime_target = "tmux"
 
-" elm
-Plug 'lambdatoast/elm.vim'
-
-" coffeescript
-Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
-
 " elixir
 Plug 'elixir-lang/vim-elixir'
 
@@ -84,6 +78,9 @@ Plug 'wavded/vim-stylus'
 Plug 'majutsushi/tagbar', { 'for': [ 'go', 'rust', 'cpp' ] }
 au FileType go nmap <Leader><Leader> :TagbarOpenAutoClose<Enter>
 au FileType cpp nmap <Leader><Leader> :TagbarOpenAutoClose<Enter>
+
+" python
+Plug 'davidhalter/jedi-vim'
 
 " rust
 Plug 'rust-lang/rust.vim'
