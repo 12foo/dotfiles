@@ -126,6 +126,10 @@ hc keybind XF86AudioNext spawn mpc next
 hc keybind XF86AudioPrev spawn mpc prev
 hc keybind $Mod-XF86AudioPlay spawn sh $CONF/switch.sh song
 
+# light
+hc keybind XF86MonBrightnessUp spawn light -A 10
+hc keybind XF86MonBrightnessDown spawn light -U 10
+
 # tag stashing
 hc keybind $Mod-asciicircum spawn sh $CONF/stash.sh
 

@@ -14,14 +14,10 @@ kbopt = ['-option', 'grp:shifts_toggle', '-option', 'compose:caps']
 # forced resolution
 modes = {
     'tacito': [
-        ('laptop', ['LVDS1'], 'thinkpad us'),
-        ('desk-vga', ['VGA1'], defkb),
-        ('desk-hdmi', ['HDMI1'], defkb),
-        ('present', ['LVDS1', 'VGA1'], 'thinkpad us'),
-    ],
-    'rigg': [
-        ('default', ['DVI-I-1'], defkb),
-        ('tv-2nd', ['DVI-I-1', 'HDMI-0 1920x1080'], defkb),
+        ('laptop', ['LVDS-1'], 'thinkpad de/nodeadkeys,us'),
+        ('desk-vga', ['VGA-1'], defkb),
+        ('desk-hdmi', ['HDMI-1'], defkb),
+        ('present', ['LVDS-1', 'VGA-1'], 'thinkpad de/nodeadkeys,us'),
     ],
     'bison': [
         ('default', ['DVI-D-0'], defkb),
@@ -37,7 +33,7 @@ def auto_mode(hostname, monitors):
     if hostname == 'tacito':
         if 'HDMI1' in monitors:
             return 'desk-hdmi'
-        elif 'VGA1' in monitors and monitors['VGA1'] == '1680x1050':
+        elif 'VGA-1' in monitors and monitors['VGA-1'] == '1680x1050':
             return 'desk-vga'
         else:
             return 'laptop'

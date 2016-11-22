@@ -10,6 +10,11 @@ case "$1" in
             killall lemonbar
             sh topbar.sh &
         fi
+
+        # restore nitrogen if available
+        if whereis nitrogen; then
+            nitrogen --restore
+        fi
         ;;
     song)
         mpc playlist | rofi -p 'jump to song: ' -dmenu -i --only-match -format d | xargs mpc play
