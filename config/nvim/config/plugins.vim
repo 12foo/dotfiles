@@ -9,10 +9,6 @@ Plug 'tpope/vim-unimpaired'
 " editorconfig
 Plug 'editorconfig/editorconfig-vim'
 
-" vim wiki
-Plug 'vimwiki/vimwiki'
-let g:vimwiki_list = [{'path': '~/ownCloud/research/wiki/', 'syntax': 'markdown', 'ext': '.md'}]
-
 " zen coding
 Plug 'mattn/emmet-vim', { 'for': 'html' }
 
@@ -51,7 +47,9 @@ Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 let g:pandoc#modules#disabled = ['folding', 'spell']
 let g:pandoc#biblio#use_bibtool = 1
+let g:pandoc#completion#bib#mode = 'citeproc'
 au FileType pandoc nmap <Leader><Leader> :TOC<Enter>
+au FileType pandoc let b:SuperTabContextTextMemberPatterns = ['@']
 
 " alignment
 Plug 'godlygeek/tabular'
