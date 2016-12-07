@@ -50,6 +50,9 @@ if !exists('g:deoplete#omni#input_patterns')
 endif
 " let g:deoplete#disable_auto_complete = 1
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+" no autocomplete for mail
+au FileType mail let b:deoplete_disable_auto_complete = 1
+
 
 " pandoc & markdown
 Plug 'vim-pandoc/vim-pandoc'
@@ -59,6 +62,7 @@ let g:pandoc#biblio#use_bibtool = 1
 let g:pandoc#completion#bib#mode = 'citeproc'
 au FileType pandoc nmap <Leader><Leader> :TOC<Enter>
 au FileType pandoc let b:SuperTabContextTextMemberPatterns = ['@']
+au FileType pandoc let b:deoplete_disable_auto_complete = 1
 
 " alignment
 Plug 'godlygeek/tabular'
