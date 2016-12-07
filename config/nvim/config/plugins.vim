@@ -13,8 +13,8 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'mattn/emmet-vim', { 'for': 'html' }
 
 " supertab
-Plug 'ervandew/supertab'
-let g:SuperTabDefaultCompletionType = "context"
+" Plug 'ervandew/supertab'
+" let g:SuperTabDefaultCompletionType = "context"
 
 " Powerline
 set laststatus=2
@@ -41,6 +41,15 @@ let g:syntastic_check_on_wq = 0
 
 " indent guides
 Plug 'nathanaelkane/vim-indent-guides'
+
+" autocompletion
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+let g:deoplete#enable_at_startup = 1
+if !exists('g:deoplete#omni#input_patterns')
+  let g:deoplete#omni#input_patterns = {}
+endif
+" let g:deoplete#disable_auto_complete = 1
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " pandoc & markdown
 Plug 'vim-pandoc/vim-pandoc'
@@ -80,30 +89,33 @@ au FileType go nmap <Leader><Leader> :TagbarOpenAutoClose<Enter>
 au FileType cpp nmap <Leader><Leader> :TagbarOpenAutoClose<Enter>
 
 " python
-Plug 'davidhalter/jedi-vim'
+Plug 'zchee/deoplete-jedi'
+
+" javascript
+Plug 'carlitux/deoplete-ternjs'
 
 " rust
 Plug 'rust-lang/rust.vim'
-Plug 'racer-rust/vim-racer'
-let g:racer_cmd = "/home/philipp/.cargo/bin/racer"
-let $CARGO_HOME = "/home/philipp/.cargo"
-let $RUST_SRC_PATH = systemlist("rustc --print sysroot")[0] . "/lib/rustlib/src/rust/src"
-let g:racer_experimental_completer = 1
+Plug 'sebastianmarkow/deoplete-rust'
+let g:deoplete#sources#rust#racer_binary = "/home/philipp/.cargo/bin/racer"
+let g:deoplete#sources#rust#rust_source_path = systemlist("rustc --print sysroot")[0] . "/lib/rustlib/src/rust/src"
 
 " go
 Plug 'fatih/vim-go'
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
 let g:go_fmt_fail_silently = 0
 au FileType go nmap <Leader>D <Plug>(go-doc)
 au FileType go nmap <Leader>d <Plug>(go-info)
 au FileType go nmap <Leader>dv <Plug>(go-doc-vertical)
 au FileType go nmap <Leader>s <Plug>(go-implements)
 au FileType go nmap <Leader>e <Plug>(go-rename)
-au FileType go setlocal omnifunc=go#complete#Complete
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
+" au FileType go setlocal omnifunc=go#complete#Complete
+Plug 'zchee/deoplete-go', { 'do': 'make' }
+let g:deoplete#sources#go#gocode_binary = "~/coding/go/bin/gocode"
 
 " clang completion
 Plug 'Rip-Rip/clang_complete'
