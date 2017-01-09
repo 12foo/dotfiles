@@ -33,7 +33,7 @@ def auto_mode(hostname, monitors):
     if hostname == 'tacito':
         if 'HDMI1' in monitors:
             return 'desk-hdmi'
-        elif 'VGA-1' in monitors and monitors['VGA-1'] == '1680x1050':
+        elif 'VGA-1' in monitors:
             return 'desk-vga'
         else:
             return 'laptop'
