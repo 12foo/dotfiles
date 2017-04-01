@@ -45,14 +45,14 @@ Xft.lcdfilter: lcdfull
 Xft.hintstyle: hintslight
 
 URxvt*intensityStyles: false
-URxvt*letterSpace: -2
-URxvt*font: xft:Hack:pixelsize=13
-URxvt*boldFont: xft:Hack:pixelsize=13:bold
-URxvt*italicFont: xft:Hack:pixelsize=13:italic
-URxvt*bolditalicFont: xft:Hack:pixelsize=13:bold:italic
-URxvt*keysym.C-0: command:\033]710;xft:Hack:pixelsize=13\007\033]711;xft:Hack:pixelsize=13:bold\007\033]712;xft:Hack:pixelsize=13:italic\007\033]713;xft:Hack:pixelsize=13:bold:italic\007
-URxvt*keysym.C-minus: command:\033]710;xft:Hack:pixelsize=11\007\033]711;xft:Hack:pixelsize=11:bold\007\033]712;xft:Hack:pixelsize=11:italic\007\033]713;xft:Hack:pixelsize=11:bold:italic\007
-URxvt*keysym.C-plus: command:\033]710;xft:Hack:pixelsize=15\007\033]711;xft:Hack:pixelsize=15:bold\007\033]712;xft:Hack:pixelsize=15:italic\007\033]713;xft:Hack:pixelsize=15:bold:italic\007
+URxvt*letterSpace: -1
+URxvt*font: xft:Iosevka:pixelsize=13
+URxvt*boldFont: xft:Iosevka:pixelsize=13:bold
+URxvt*italicFont: xft:Iosevka:pixelsize=13:italic
+URxvt*bolditalicFont: xft:Iosevka:pixelsize=13:bold:italic
+URxvt*keysym.C-0: command:\033]710;xft:Iosevka:pixelsize=13\007\033]711;xft:Iosevka:pixelsize=13:bold\007\033]712;xft:Iosevka:pixelsize=13:italic\007\033]713;xft:Iosevka:pixelsize=13:bold:italic\007
+URxvt*keysym.C-minus: command:\033]710;xft:Iosevka:pixelsize=11\007\033]711;xft:Iosevka:pixelsize=11:bold\007\033]712;xft:Iosevka:pixelsize=11:italic\007\033]713;xft:Iosevka:pixelsize=11:bold:italic\007
+URxvt*keysym.C-plus: command:\033]710;xft:Iosevka:pixelsize=15\007\033]711;xft:Iosevka:pixelsize=15:bold\007\033]712;xft:Iosevka:pixelsize=15:italic\007\033]713;xft:Iosevka:pixelsize=15:bold:italic\007
 URxvt*depth: 32
 URxvt*background: [90]#141618
 URxvt*perl-ext-common: default,matcher
