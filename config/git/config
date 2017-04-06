@@ -11,4 +11,9 @@
 	name = Philipp Rustemeier
 [alias]
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
-	up = "!git remote update -p; git merge --ff-only @{u}"
+    up = "!git remote update -p; git merge --ff-only @{u}"
+    prune = fetch --prune
+    undo = reset --soft HEAD^
+[merge]
+    ff = only
+
