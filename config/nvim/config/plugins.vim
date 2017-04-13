@@ -1,3 +1,6 @@
+" node host: for running javascript based plugins
+Plug 'neovim/node-host', { 'do': 'npm install' }
+
 " tim pope: cool guy 
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
@@ -69,11 +72,9 @@ Plug 'godlygeek/tabular'
 
 " clojure
 Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
-Plug 'guns/vim-sexp', { 'for': 'clojure' }
-Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'clojure' }
+Plug 'clojure-vim/nvim-parinfer.js', { 'for': 'clojure' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
-Plug 'jebberjeb/grimoire.vim', { 'for': 'clojure' }
 Plug 'luochen1990/rainbow'
 let g:rainbow_active = 1
 
