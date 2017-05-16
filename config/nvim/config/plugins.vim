@@ -72,11 +72,16 @@ Plug 'godlygeek/tabular'
 
 " clojure
 Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
-Plug 'clojure-vim/nvim-parinfer.js', { 'for': 'clojure' }
+Plug 'guns/vim-sexp', { 'for': 'clojure' }
+Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'clojure' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
-Plug 'luochen1990/rainbow'
+Plug 'luochen1990/rainbow', { 'for': 'clojure' }
+Plug 'clojure-vim/async-clj-omni'
+Plug 'clojure-vim/nvim-parinfer.js'
 let g:rainbow_active = 1
+let g:deoplete#keyword_patterns = {}
+let g:deoplete#keyword_patterns.clojure = '[\w!$%&*+/:<=>?@\^_~\-\.#]*'
 
 " vim-slime
 Plug 'jpalardy/vim-slime'

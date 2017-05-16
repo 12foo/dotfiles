@@ -43,7 +43,7 @@ set smartcase
 " faster esc
 set timeoutlen=1000
 set ttimeoutlen=50
-set noesckeys
+" set noesckeys " (gone now?)
 
 " ALWAYS HARDCORE
 " noremap <Up> <nop>
