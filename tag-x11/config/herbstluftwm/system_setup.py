@@ -3,7 +3,7 @@
 import os, sys, subprocess, socket, collections
 
 # default keyboard layout (either 'layout1,layout2/variant' or 'model layout,layout/variant')
-defkb = 'de/nodeadkeys,us'
+defkb = 'de/nodeadkeys,us,ru/phonetic_winkeys'
 
 # default keyboard options
 kbopt = ['-option', 'grp:shifts_toggle', '-option', 'compose:caps']
