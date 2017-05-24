@@ -7,12 +7,13 @@ set completeopt=menu,menuone,longest
 set pumheight=30
 set grepprg=grep\ -nH\ $*
 set linebreak
-let maplocalleader=","
 set number
 set pastetoggle=<F2>
 set conceallevel=2
 
-let mapleader=","
+nnoremap <Space> <Nop>
+let maplocalleader="\<Space>"
+let mapleader="\<Space>"
 
 filetype off
 
@@ -22,6 +23,7 @@ nnoremap <C-PageDown> :bn<CR>
 nnoremap <C-PageUp> :bp<CR>
 inoremap <C-PageDown> <Esc>:bn<CR>
 inoremap <C-PageUp> <Esc>:bp<CR>
+tnoremap <Esc> <C-\><C-n>
 
 " highlight current line
 set cursorline

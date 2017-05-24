@@ -15,6 +15,9 @@ Plug 'editorconfig/editorconfig-vim'
 " zen coding
 Plug 'mattn/emmet-vim', { 'for': 'html' }
 
+" tabularize
+Plug 'godlygeek/tabular'
+
 " supertab
 " Plug 'ervandew/supertab'
 " let g:SuperTabDefaultCompletionType = "context"
@@ -110,6 +113,28 @@ Plug 'sebastianmarkow/deoplete-rust'
 let g:rustfmt_autosave = 1
 let g:deoplete#sources#rust#racer_binary = "/home/philipp/.cargo/bin/racer"
 let g:deoplete#sources#rust#rust_source_path = systemlist("rustc --print sysroot")[0] . "/lib/rustlib/src/rust/src"
+
+" haskell
+Plug 'eagletmt/neco-ghc'
+Plug 'parsonsmatt/intero-neovim'
+let g:haskell_tabular = 1
+vmap a= :Tabularize /=<CR>
+vmap a; :Tabularize /::<CR>
+vmap a- :Tabularize /-><CR>
+nnoremap <Leader>hio :InteroOpen<CR>
+nnoremap <Leader>hik :InteroKill<CR>
+nnoremap <Leader>hic :InteroHide<CR>
+nnoremap <Leader>hil :InteroLoadCurrentModule<CR>
+nnoremap <Leader>hie :InteroEval<CR>
+nnoremap <Leader>hit :InteroGenericType<CR>
+nnoremap <Leader>hiT :InteroType<CR>
+nnoremap <Leader>hii :InteroInfo<CR>
+nnoremap <Leader>hiI :InteroTypeInsert<CR>
+nnoremap <Leader>hid :InteroGoToDef<CR>
+nnoremap <Leader>hiu :InteroUses<CR>
+
+" Reload the file in Intero after saving
+autocmd! BufWritePost *.hs InteroReload
 
 " go
 Plug 'fatih/vim-go'
