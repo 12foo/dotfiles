@@ -1,4 +1,4 @@
-" node host: for running javascript based plugins
+" remote plugins
 Plug 'neovim/node-host', { 'do': 'npm install' }
 
 " tim pope: cool guy 
@@ -49,16 +49,17 @@ let g:syntastic_check_on_wq = 0
 Plug 'nathanaelkane/vim-indent-guides'
 
 " autocompletion
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-let g:deoplete#enable_at_startup = 1
-if !exists('g:deoplete#omni#input_patterns')
-  let g:deoplete#omni#input_patterns = {}
-endif
-" let g:deoplete#disable_auto_complete = 1
-autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-" no autocomplete for mail
-au FileType mail let b:deoplete_disable_auto_complete = 1
+Plug 'roxma/nvim-completion-manager'
 
+" language clients
+Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['rustup', 'run', 'nightly', 'rls']
+    \ }
+let g:LanguageClient_autoStart = 1
+nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
 
 " pandoc & markdown
 Plug 'vim-pandoc/vim-pandoc'
@@ -68,7 +69,6 @@ let g:pandoc#biblio#use_bibtool = 1
 let g:pandoc#completion#bib#mode = 'citeproc'
 au FileType pandoc nmap <Leader><Leader> :TOC<Enter>
 au FileType pandoc let b:SuperTabContextTextMemberPatterns = ['@']
-au FileType pandoc let b:deoplete_disable_auto_complete = 1
 
 " alignment
 Plug 'godlygeek/tabular'
@@ -83,12 +83,6 @@ Plug 'luochen1990/rainbow', { 'for': 'clojure' }
 Plug 'clojure-vim/async-clj-omni'
 Plug 'clojure-vim/nvim-parinfer.js'
 let g:rainbow_active = 1
-let g:deoplete#keyword_patterns = {}
-let g:deoplete#keyword_patterns.clojure = '[\w!$%&*+/:<=>?@\^_~\-\.#]*'
-
-" vim-slime
-Plug 'jpalardy/vim-slime'
-let g:slime_target = "tmux"
 
 " elixir
 Plug 'elixir-lang/vim-elixir'
@@ -101,18 +95,9 @@ Plug 'majutsushi/tagbar', { 'for': [ 'go', 'rust', 'cpp' ] }
 au FileType go nmap <Leader><Leader> :TagbarOpenAutoClose<Enter>
 au FileType cpp nmap <Leader><Leader> :TagbarOpenAutoClose<Enter>
 
-" python
-Plug 'zchee/deoplete-jedi'
-
-" javascript
-Plug 'carlitux/deoplete-ternjs'
-
 " rust
 Plug 'rust-lang/rust.vim'
-Plug 'sebastianmarkow/deoplete-rust'
 let g:rustfmt_autosave = 1
-let g:deoplete#sources#rust#racer_binary = "/home/philipp/.cargo/bin/racer"
-let g:deoplete#sources#rust#rust_source_path = systemlist("rustc --print sysroot")[0] . "/lib/rustlib/src/rust/src"
 
 " haskell
 Plug 'eagletmt/neco-ghc'
@@ -150,14 +135,6 @@ au FileType go nmap <Leader>dv <Plug>(go-doc-vertical)
 au FileType go nmap <Leader>s <Plug>(go-implements)
 au FileType go nmap <Leader>e <Plug>(go-rename)
 " au FileType go setlocal omnifunc=go#complete#Complete
-Plug 'zchee/deoplete-go', { 'do': 'make' }
-let g:deoplete#sources#go#gocode_binary = "~/coding/go/bin/gocode"
-
-" clang completion
-Plug 'Rip-Rip/clang_complete'
-let g:syntastic_cpp_compiler = 'clang++'
-let g:clang_complete_auto = 0
-let g:clang_complete_copen = 1
 
 " less
 Plug 'groenewege/vim-less'
