@@ -50,6 +50,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 
 " autocompletion
 Plug 'roxma/nvim-completion-manager'
+au FileType mail call cm#disable_for_buffer()
 
 " language clients
 Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
