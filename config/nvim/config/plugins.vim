@@ -12,6 +12,11 @@ Plug 'tpope/vim-unimpaired'
 " editorconfig
 Plug 'editorconfig/editorconfig-vim'
 
+" vimwiki
+Plug 'vimwiki/vimwiki'
+let wiki_diss = { 'path': '~/sciebo/diss/wiki/', 'syntax': 'markdown', 'ext': '.md' }
+let g:vimwiki_list = [wiki_diss]
+
 " zen coding
 Plug 'mattn/emmet-vim', { 'for': 'html' }
 
