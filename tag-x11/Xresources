@@ -45,7 +45,7 @@ Xft.lcdfilter: lcdfull
 Xft.hintstyle: hintslight
 
 URxvt*intensityStyles: false
-URxvt*letterSpace: -1
+URxvt*letterSpace: 0
 URxvt*font: xft:Iosevka:pixelsize=13
 URxvt*boldFont: xft:Iosevka:pixelsize=13:bold
 URxvt*italicFont: xft:Iosevka:pixelsize=13:italic
