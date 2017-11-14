@@ -1,4 +1,4 @@
-set PATH ~/bin ~/.local/bin ~/.cargo/bin $PATH
+set PATH ~/bin ~/.local/bin ~/.cargo/bin ~/.nimble/bin $PATH
 
 if test -e $HOME/.keychain/(hostname)-fish
     source $HOME/.keychain/(hostname)-fish
