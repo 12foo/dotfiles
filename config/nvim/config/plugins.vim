@@ -127,6 +127,9 @@ nnoremap <Leader>hiu :InteroUses<CR>
 " Reload the file in Intero after saving
 autocmd! BufWritePost *.hs InteroReload
 
+" nim
+Plug 'zah/nim.vim'
+
 " go
 Plug 'fatih/vim-go'
 let g:go_highlight_functions = 1
