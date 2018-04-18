@@ -83,10 +83,9 @@ Plug 'godlygeek/tabular'
 Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
 Plug 'guns/vim-sexp', { 'for': 'clojure' }
 Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'clojure' }
-Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
 Plug 'luochen1990/rainbow'
-Plug 'clojure-vim/async-clj-omni'
+Plug 'clojure-vim/acid.nvim'
 Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --manifest-path=cparinfer/Cargo.toml --release'}
 let g:rainbow_active = 1
 
