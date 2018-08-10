@@ -54,7 +54,7 @@ let g:syntastic_check_on_wq = 0
 Plug 'nathanaelkane/vim-indent-guides'
 
 " autocompletion
-Plug 'roxma/nvim-completion-manager'
+Plug 'ncm2/ncm2'
 au FileType mail call cm#disable_for_buffer()
 
 " language clients
