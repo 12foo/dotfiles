@@ -68,6 +68,10 @@ URxvt*scrollTtyKeypress: true
 URxvt.keysym.C-Prior: \033[5;5~
 URxvt.keysym.C-Next: \033[6;5~
 
+UXTerm*renderFont: true
+UXTerm*faceName: Iosevka
+UXTerm*faceSize: 10
+
 rofi.font: Hack 10
 rofi.padding: 6
 rofi.separator-style: solid

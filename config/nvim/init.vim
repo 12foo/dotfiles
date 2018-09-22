@@ -9,6 +9,7 @@ runtime config/settings.vim
 " PLUGINS START HERE
 call plug#begin('~/.vim/plugged')
 runtime config/plugins.vim
+runtime config/languages.vim
 call plug#end()
 
 runtime config/aliases.vim
