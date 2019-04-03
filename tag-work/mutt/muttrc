@@ -1,6 +1,7 @@
 set move = no
 set markers = no
 set imap_keepalive = 60
+set smtp_authenticators = 'gssapi:login'
 set sort = "threads"
 set sort_aux = "reverse-last-date-received"
 set editor = "nvim"
