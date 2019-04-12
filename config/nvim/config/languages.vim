@@ -23,12 +23,14 @@ au FileType go nmap <Leader>e <Plug>(go-rename)
 " au FileType go setlocal omnifunc=go#complete#Complete
 
 " clojure
-Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
-Plug 'guns/vim-sexp', { 'for': 'clojure' }
-Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'clojure' }
-Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
+Plug 'guns/vim-clojure-static'
+Plug 'guns/vim-clojure-highlight'
+" Plug 'guns/vim-sexp', { 'for': 'clojure' }
+" Plug 'tpope/vim-sexp-mappings-for-regular-people'
+Plug 'tpope/vim-fireplace'
+Plug 'tpope/vim-salve'
 Plug 'luochen1990/rainbow'
-Plug 'clojure-vim/acid.nvim'
+" Plug 'clojure-vim/acid.nvim'
 Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --manifest-path=cparinfer/Cargo.toml --release'}
 let g:rainbow_active = 1
 
