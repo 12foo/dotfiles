@@ -40,6 +40,7 @@ Plug 'elixir-lang/vim-elixir'
 " web crap
 Plug 'wavded/vim-stylus'
 Plug 'groenewege/vim-less'
+Plug 'burner/vim-svelte'
 Plug 'mattn/emmet-vim', { 'for': 'html' }
 
 " the great autocomplete fiesta
