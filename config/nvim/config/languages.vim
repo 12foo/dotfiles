@@ -7,21 +7,6 @@ Plug 'rust-lang/rust.vim'
 " nim
 Plug 'zah/nim.vim'
 
-" go
-Plug 'fatih/vim-go'
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
-let g:go_fmt_fail_silently = 0
-au FileType go nmap <Leader>D <Plug>(go-doc)
-au FileType go nmap <Leader>d <Plug>(go-info)
-au FileType go nmap <Leader>dv <Plug>(go-doc-vertical)
-au FileType go nmap <Leader>s <Plug>(go-implements)
-au FileType go nmap <Leader>e <Plug>(go-rename)
-" au FileType go setlocal omnifunc=go#complete#Complete
-
 " clojure
 Plug 'guns/vim-clojure-static'
 Plug 'guns/vim-clojure-highlight'
@@ -43,11 +28,30 @@ Plug 'groenewege/vim-less'
 Plug 'burner/vim-svelte'
 Plug 'mattn/emmet-vim', { 'for': 'html' }
 
-" the great autocomplete fiesta
-Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
-let g:LanguageClient_serverCommands = {
-    \ 'rust': ['rustup', 'run', 'stable', 'rls'],
-    \ 'python': ['pyls'],
-    \ }
+" Language Client
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
+imap <c-space> <Plug>(asyncomplete_force_refresh)
 
-nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+if executable('rls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'rls',
+        \ 'cmd': {server_info->['rustup', 'run', 'stable', 'rls']},
+        \ 'workspace_config': {'rust': {'clippy_preference': 'on'}},
+        \ 'whitelist': ['rust'],
+        \ })
+endif
+
+if executable('/home/philipp/go/bin/gopls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'gopls',
+        \ 'cmd': {server_info->['/home/philipp/go/bin/gopls', '-mode', 'stdio']},
+        \ 'whitelist': ['go'],
+        \ })
+    autocmd BufWritePre *.go silent LspDocumentFormatSync
+endif
