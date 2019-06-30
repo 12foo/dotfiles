@@ -1,6 +1,3 @@
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-let g:deoplete#enable_at_startup = 1
-
 " rust
 Plug 'rust-lang/rust.vim'
 
@@ -33,10 +30,8 @@ Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
 imap <c-space> <Plug>(asyncomplete_force_refresh)
+inoremap <expr> <CR> pumvisible() ? asyncomplete#close_popup() : "\<CR>"
 
 if executable('rls')
     au User lsp_setup call lsp#register_server({
@@ -54,4 +49,12 @@ if executable('/home/philipp/go/bin/gopls')
         \ 'whitelist': ['go'],
         \ })
     autocmd BufWritePre *.go silent LspDocumentFormatSync
+endif
+
+if executable('pyls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'pyls',
+        \ 'cmd': {server_info->['pyls']},
+        \ 'whitelist': ['python']
+        \ })
 endif
