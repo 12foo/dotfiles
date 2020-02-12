@@ -17,9 +17,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 " vimwiki
-Plug 'vimwiki/vimwiki'
-let wiki_diss = { 'path': '~/sciebo/diss/wiki/', 'syntax': 'markdown', 'ext': '.md' }
-let g:vimwiki_list = [wiki_diss]
+Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 
 " tabularize
 Plug 'godlygeek/tabular'
@@ -34,6 +32,8 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
+
+Plug 'blindFS/vim-taskwarrior'
 
 " syntastic (syntax checker)
 Plug 'scrooloose/syntastic'

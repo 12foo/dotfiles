@@ -23,6 +23,9 @@ modes = {
         ('default', ['DVI-D-0'], defkb),
         ('tv-2nd', ['DVI-D-0', 'HDMI-0 1920x1080'], defkb),
     ],
+    'tyson': [
+        ('default', ['HDMI-0'], defkb),
+    ],
 }
 
 # edit this function to autoselect specific modes based on type and

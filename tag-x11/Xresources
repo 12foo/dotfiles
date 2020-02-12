@@ -72,7 +72,7 @@ UXTerm*renderFont: true
 UXTerm*faceName: Iosevka
 UXTerm*faceSize: 10
 
-rofi.font: Hack 10
+rofi.font: Iosevka 10
 rofi.padding: 6
 rofi.separator-style: solid
 rofi.hide-scrollbar: true
