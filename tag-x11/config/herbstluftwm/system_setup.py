@@ -3,7 +3,7 @@
 import os, sys, subprocess, socket, collections
 
 # default keyboard layout (either 'layout1,layout2/variant' or 'model layout,layout/variant')
-defkb = 'de/nodeadkeys,us,ru/phonetic_winkeys'
+defkb = 'de/nodeadkeys,us'
 
 # default keyboard options
 kbopt = ['-option', 'grp:shifts_toggle', '-option', 'compose:caps']
@@ -20,8 +20,7 @@ modes = {
         ('present', ['LVDS-1', 'VGA-1'], 'thinkpad de/nodeadkeys,us'),
     ],
     'bison': [
-        ('default', ['DVI-D-0'], defkb),
-        ('tv-2nd', ['DVI-D-0', 'HDMI-0 1920x1080'], defkb),
+        ('default', ['HDMI-0'], defkb),
     ],
     'tyson': [
         ('default', ['HDMI-0'], defkb),
