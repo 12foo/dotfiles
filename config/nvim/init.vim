@@ -12,4 +12,5 @@ runtime config/plugins.vim
 runtime config/languages.vim
 call plug#end()
 
+runtime config/after_plug.vim
 runtime config/aliases.vim

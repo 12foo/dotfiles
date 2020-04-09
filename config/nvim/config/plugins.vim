@@ -36,14 +36,16 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 Plug 'blindFS/vim-taskwarrior'
 
 " syntastic (syntax checker)
-Plug 'scrooloose/syntastic'
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" Plug 'scrooloose/syntastic'
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+
+Plug 'neomake/neomake'
 
 " indent guides
 Plug 'nathanaelkane/vim-indent-guides'

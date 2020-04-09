@@ -25,6 +25,9 @@ Plug 'groenewege/vim-less'
 Plug 'burner/vim-svelte'
 Plug 'mattn/emmet-vim', { 'for': 'html' }
 
+" go
+Plug 'fatih/vim-go'
+
 " Language Client
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
