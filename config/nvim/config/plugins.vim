@@ -33,31 +33,8 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 
-Plug 'blindFS/vim-taskwarrior'
-
-" syntastic (syntax checker)
-" Plug 'scrooloose/syntastic'
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
-
-Plug 'neomake/neomake'
-
 " indent guides
 Plug 'nathanaelkane/vim-indent-guides'
-
-" pandoc & markdown
-Plug 'vim-pandoc/vim-pandoc'
-Plug 'vim-pandoc/vim-pandoc-syntax'
-let g:pandoc#modules#disabled = ['folding', 'spell']
-let g:pandoc#biblio#use_bibtool = 1
-let g:pandoc#completion#bib#mode = 'citeproc'
-au FileType pandoc nmap <Leader><Leader> :TOC<Enter>
-au FileType pandoc let b:SuperTabContextTextMemberPatterns = ['@']
 
 " tagbar
 Plug 'majutsushi/tagbar', { 'for': [ 'go', 'rust', 'cpp' ] }
