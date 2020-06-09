@@ -9,6 +9,9 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-unimpaired'
 
+Plug 'justinmk/vim-dirvish'
+let g:dirvish_mode = ':sort ,^.*[\/],'
+
 " editorconfig
 Plug 'editorconfig/editorconfig-vim'
 

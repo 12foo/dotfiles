@@ -16,13 +16,15 @@ let g:rainbow_active = 1
 " elixir
 Plug 'elixir-lang/vim-elixir'
 
+" go bro
+autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
+
+
 " web crap
-Plug 'wavded/vim-stylus'
-Plug 'groenewege/vim-less'
+Plug 'cakebaker/scss-syntax.vim'
 Plug 'pangloss/vim-javascript'
-Plug 'evanleck/vim-svelte'
 Plug 'mattn/emmet-vim'
 
-" go
-" autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
+Plug 'evanleck/vim-svelte'
+Plug 'posva/vim-vue'
 
