@@ -17,7 +17,12 @@ Plug 'editorconfig/editorconfig-vim'
 
 " ctrlp
 Plug 'ctrlpvim/ctrlp.vim'
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+if executable('rg')
+    set grepprg=rg\ -H\ --no-heading\ --vimgrep
+    set grepformat=%f:%l:%c:%m
+    let g:ctrlp_user_command = 'rg %s --files --color never -g "!.git" -g "!node_modules"'
+    let g:ctrlp_use_caching = 0
+endif
 
 " vimwiki
 Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
