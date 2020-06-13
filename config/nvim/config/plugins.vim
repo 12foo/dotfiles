@@ -1,6 +1,8 @@
 " remote plugins
 " Plug 'neovim/node-host', { 'do': 'npm install' }
 
+Plug 'easymotion/vim-easymotion'
+
 " tim pope: cool guy 
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'

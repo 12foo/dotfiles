@@ -26,5 +26,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'mattn/emmet-vim'
 
 Plug 'evanleck/vim-svelte'
+autocmd FileType svelte setlocal shiftwidth=2 tabstop=2
+
 Plug 'posva/vim-vue'
 
