@@ -1,7 +1,12 @@
 " remote plugins
 " Plug 'neovim/node-host', { 'do': 'npm install' }
 
-Plug 'easymotion/vim-easymotion'
+" float like a butterfly
+Plug 'justinmk/vim-sneak'
+Plug 'liuchengxu/vista.vim'
+let g:vista_icon_indent = ["▸ ", ""]
+map <F9> :Vista!!<CR>
+map <F10> :Vista finder<CR>
 
 " tim pope: cool guy 
 Plug 'tpope/vim-sensible'
