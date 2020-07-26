@@ -36,7 +36,7 @@ def get_credentials(name):
 
 class MailChecker(object):
     def __init__(self):
-        self.check_interval = 15
+        self.check_interval = 30
         self.cache_file = '/tmp/.check-mail'
         path = os.path.expanduser('~/.password-store/email')
         acctnames = (f[:-4] for f in os.listdir(path) if f.endswith('.gpg'))
@@ -102,8 +102,26 @@ class MailChecker(object):
         accounts = check['accounts']
         return accounts
 
+    def format_polybar(self):
+        mailstatus = self.current_status()
+        account_format = "%{F#777}"
+        num_format = "%{F-}"
+        reset_format = "%{F-}"
+        return "  ".join(f"{account_format}{acct}{reset_format} {num_format}{mails}{reset_format}" for acct, mails in mailstatus.items() if mails > 0)
+
+    def check_has_mails(self):
+        mailstatus = self.current_status()
+        return any(mails > 0 for mails in mailstatus.values())
+
 if __name__ == '__main__':
-    checker = MailChecker()
-    print(checker.current_status())
-    time.sleep(3)
-    print(checker.current_status())
+    if len(sys.argv) < 2:
+        sys.exit(1)
+    if sys.argv[1] == "has_mails":
+        checker = MailChecker()
+        if checker.check_has_mails():
+            sys.exit(0)
+        else:
+            sys.exit(1)
+    elif sys.argv[1] == "polybar":
+        checker = MailChecker()
+        print(checker.format_polybar())

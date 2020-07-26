@@ -20,7 +20,7 @@ modes = {
         ('present', ['LVDS-1', 'VGA-1'], 'thinkpad de/nodeadkeys,us'),
     ],
     'bison': [
-        ('default', ['HDMI-0'], defkb),
+        ('default', ['DP-4'], defkb),
     ],
     'tyson': [
         ('default', ['HDMI-0'], defkb),

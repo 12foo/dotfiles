@@ -8,5 +8,5 @@ export PATH=/home/philipp/bin:$PATH
 export EDITOR=nvim
 export TERMINAL=urxvt
 xrdb ~/.Xresources
-exec herbstluftwm --locked
+exec herbstluftwm
 
