@@ -3,8 +3,7 @@
 # configurables
 barheight=24
 separator="|"
-#font1="-*-profont-medium-*-*-*-12-*-*-*-*-*-*-*"
-font1="Iosevka:size=9"
+font1="Dina:size=9"
 font2="-wuncon-siji-medium-r-normal-*-*-*-*-*-*-*-*-*"
 color_foreground="#ffffff"
 color_background="#282f3a"

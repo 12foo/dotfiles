@@ -46,13 +46,13 @@ Xft.hintstyle: hintslight
 
 URxvt*intensityStyles: false
 URxvt*letterSpace: 0
-URxvt*font: xft:Iosevka Term:pixelsize=13
-URxvt*boldFont: xft:Iosevka Term:pixelsize=13:bold
-URxvt*italicFont: xft:Iosevka Term:pixelsize=13:italic
-URxvt*bolditalicFont: xft:Iosevka Term:pixelsize=13:bold:italic
-URxvt*keysym.C-0: command:\033]710;xft:Iosevka Term:pixelsize=13\007\033]711;xft:Iosevka Term:pixelsize=13:bold\007\033]712;xft:Iosevka Term:pixelsize=13:italic\007\033]713;xft:Iosevka Term:pixelsize=13:bold:italic\007
-URxvt*keysym.C-minus: command:\033]710;xft:Iosevka Term:pixelsize=11\007\033]711;xft:Iosevka Term:pixelsize=11:bold\007\033]712;xft:Iosevka Term:pixelsize=11:italic\007\033]713;xft:Iosevka Term:pixelsize=11:bold:italic\007
-URxvt*keysym.C-plus: command:\033]710;xft:Iosevka Term:pixelsize=15\007\033]711;xft:Iosevka Term:pixelsize=15:bold\007\033]712;xft:Iosevka Term:pixelsize=15:italic\007\033]713;xft:Iosevka Term:pixelsize=15:bold:italic\007
+URxvt*font: xft:Jetbrains Mono:pixelsize=13
+URxvt*boldFont: xft:Jetbrains Mono:pixelsize=13:bold
+URxvt*italicFont: xft:Jetbrains Mono:pixelsize=13:italic
+URxvt*bolditalicFont: xft:Jetbrains Mono:pixelsize=13:bold:italic
+URxvt*keysym.C-0: command:\033]710;xft:JetBrains Mono:pixelsize=13\007\033]711;xft:JetBrains Mono:pixelsize=13:bold\007\033]712;xft:JetBrains Mono:pixelsize=13:italic\007\033]713;xft:JetBrains Mono:pixelsize=13:bold:italic\007
+URxvt*keysym.C-minus: command:\033]710;xft:JetBrains Mono:pixelsize=11\007\033]711;xft:JetBrains Mono:pixelsize=11:bold\007\033]712;xft:JetBrains Mono:pixelsize=11:italic\007\033]713;xft:JetBrains Mono:pixelsize=11:bold:italic\007
+URxvt*keysym.C-plus: command:\033]710;xft:JetBrains Mono:pixelsize=15\007\033]711;xft:JetBrains Mono:pixelsize=15:bold\007\033]712;xft:JetBrains Mono:pixelsize=15:italic\007\033]713;xft:JetBrains Mono:pixelsize=15:bold:italic\007
 URxvt*depth: 32
 URxvt*background: [90]#141618
 URxvt*perl-ext-common: default,matcher
@@ -69,10 +69,10 @@ URxvt.keysym.C-Prior: \033[5;5~
 URxvt.keysym.C-Next: \033[6;5~
 
 UXTerm*renderFont: true
-UXTerm*faceName: Iosevka
+UXTerm*faceName: JetBrains Mono
 UXTerm*faceSize: 10
 
-rofi.font: Iosevka 10
+rofi.font: JetBrains Mono 10
 rofi.padding: 6
 rofi.separator-style: solid
 rofi.hide-scrollbar: true

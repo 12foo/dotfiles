@@ -14,6 +14,7 @@ set conceallevel=2
 nnoremap <Space> <Nop>
 let maplocalleader="\<Space>"
 let mapleader="\<Space>"
+nnoremap <esc> :noh<return><esc>
 
 filetype off
 

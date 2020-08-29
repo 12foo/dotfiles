@@ -31,6 +31,11 @@ if executable('rg')
     let g:ctrlp_use_caching = 0
 endif
 
+" ripgrep integration
+Plug 'jremmen/vim-ripgrep'
+let g:rg_derive_root = 1
+let g:rg_root_types = ['.git', '.fslckout']
+
 " vimwiki
 Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 
