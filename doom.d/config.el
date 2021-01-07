@@ -57,7 +57,7 @@
                         \\hfill
                         \\begin{minipage}[b]{.55\\linewidth}\\begin{flushright}{\\footnotesize \\vspace*{5pt}
                                         Philipp Rustemeier \\dslash Geroldstr. 5 \\dslash 33098 Paderborn \\\\
-                                        philipp\\,@\\,bytepool.net \\dslash DE815522883
+                                        philipp\\,@\\,rustemeier.it
                                 }\\end{flushright}\\end{minipage}
                         }
                         \\pagestyle{scrheadings}
@@ -66,7 +66,6 @@
                         \\renewcommand*{\\chaptermarkformat}{}
                         \\renewcommand*{\\sectionmarkformat}{}
                         \\clearpairofpagestyles
-                        \\chead[\\title]{\\title}
                         \\ofoot[\\pagemark]{\\pagemark}
                         \\ifoot[\\headmark]{\\headmark}
                         \\areaset[0mm]{0.8\\paperwidth}{0.9\\paperheight}
