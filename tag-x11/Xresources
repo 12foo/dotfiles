@@ -45,7 +45,7 @@ Xft.lcdfilter: lcdfull
 Xft.hintstyle: hintslight
 
 URxvt*intensityStyles: false
-URxvt*letterSpace: 0
+URxvt*letterSpace: -1
 URxvt*font: xft:Jetbrains Mono:pixelsize=13
 URxvt*boldFont: xft:Jetbrains Mono:pixelsize=13:bold
 URxvt*italicFont: xft:Jetbrains Mono:pixelsize=13:italic
