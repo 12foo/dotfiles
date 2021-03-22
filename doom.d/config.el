@@ -3,6 +3,26 @@
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
 
+(defconst autosave-directory (expand-file-name "emacs-autosave/" temporary-file-directory))
+(unless (file-directory-p autosave-directory) (make-directory autosave-directory))
+(setq backup-directory-alist `((".*" . ,autosave-directory)))
+(setq auto-save-file-name-transforms `((".*" ,autosave-directory t)))
+
+(setq doom-theme 'doom-palenight)
+(setq doom-font (font-spec :family "JetBrains Mono" :size 14)
+      doom-big-font (font-spec :family "JetBrains Mono" :size 18))
+
+      ;; doom-variable-pitch-font (font-spec :family "Overpass" :size 24)
+      ;; doom-unicode-font (font-spec :family "JuliaMono")
+      ;; doom-serif-font (font-spec :family "IBM Plex Mono" :weight 'light)
+
+
+      (setq company-selection-wrap-around t)
+
+(setq +lookup-open-url-fn #'+lookup-xwidget-webkit-open-url-fn)
+
+(map! "C-<next>" #'next-buffer)
+(map! "C-<prior>" #'previous-buffer)
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
@@ -39,6 +59,7 @@
                         \\usepackage[ngerman]{babel}
                         \\usepackage{fontspec}
                         \\usepackage{xcolor}
+                        \\usepackage{parskip}
                         \\usepackage[headsepline,footsepline,automark]{scrlayer-scrpage}
 
                         [DEFAULT-PACKAGES]
@@ -101,3 +122,4 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+

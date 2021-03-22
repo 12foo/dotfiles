@@ -16,7 +16,7 @@ hc emit_hook reload
 # start a bunch of stuff
 which picom && ((pidof picom && pkill picom && picom -b) || picom -b)
 which pulseaudio && ((pidof pulseaudio && pulseaudio -k && pulseaudio -D) || pulseaudio -D)
-which mpd && ((pidof mpd && mpd --kill && mpd) || mpd)
+which mpd && ((pidof mpd && killall mpd && mpd) || mpd)
 # which polybar && ((pidof polybar && polybar -r) || polybar -c $CONF/polybar.conf default &)
 if which lemonbar; then
     if pgrep topbar.sh; then
