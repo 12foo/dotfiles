@@ -21,3 +21,7 @@ local.properties
 
 # idea
 .idea*
+
+# emacs
+.dir-locals.el
+omnisharp.json

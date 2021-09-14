@@ -61,3 +61,7 @@ Plug 'majutsushi/tagbar', { 'for': [ 'go', 'rust', 'cpp' ] }
 au FileType go nmap <Leader><Leader> :TagbarOpenAutoClose<Enter>
 au FileType cpp nmap <Leader><Leader> :TagbarOpenAutoClose<Enter>
 
+" the greatest power
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/nvim-compe'
+

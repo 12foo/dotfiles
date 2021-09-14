@@ -9,7 +9,7 @@
 (setq auto-save-file-name-transforms `((".*" ,autosave-directory t)))
 
 (setq doom-theme 'doom-palenight)
-(setq doom-font (font-spec :family "JetBrains Mono" :size 14)
+(setq doom-font (font-spec :family "JetBrains Mono" :size 13)
       doom-big-font (font-spec :family "JetBrains Mono" :size 18))
 
       ;; doom-variable-pitch-font (font-spec :family "Overpass" :size 24)
@@ -17,12 +17,12 @@
       ;; doom-serif-font (font-spec :family "IBM Plex Mono" :weight 'light)
 
 
-      (setq company-selection-wrap-around t)
+(setq company-selection-wrap-around t)
 
 (setq +lookup-open-url-fn #'+lookup-xwidget-webkit-open-url-fn)
 
-(map! "C-<next>" #'next-buffer)
-(map! "C-<prior>" #'previous-buffer)
+(map! "C-<next>" #'centaur-tabs-forward)
+(map! "C-<prior>" #'centaur-tabs-backward)
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
@@ -50,10 +50,15 @@
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/rustemeier.it/org/")
+(setq org-startup-folded 'showall)
+
+(after! scala-mode
+        (setq scala-indent:align-parameters nil))
+
 (after! ox-latex
-        (add-to-list 'org-latex-classes
-                     '("prit-report"
-                       "
+  (add-to-list 'org-latex-classes
+               '("prit-report"
+                 "
                         \\documentclass[paper=a4,headsepline,footsepline,pagenumber=off,twoside=false,headlines=4,titlepage=false]{scrreprt}
                         \\usepackage[T1]{fontenc}
                         \\usepackage[ngerman]{babel}
@@ -92,14 +97,14 @@
                         \\areaset[0mm]{0.8\\paperwidth}{0.9\\paperheight}
                         \\setuptoc{toc}{leveldown}
                         "
-                       ("\\chapter{%s}" . "\\chapter*{%s}")
-                       ("\\section{%s}" . "\\section*{%s}")
-                       ("\\subsection{%s}" . "\\subsection*{%s}")
-                       ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
-                       ("\\paragraph{%s}" . "\\paragraph*{%s}")
-                       ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
-        (setq org-latex-default-class "prit-report")
-        (setq org-latex-compiler "lualatex"))
+                 ("\\chapter{%s}" . "\\chapter*{%s}")
+                 ("\\section{%s}" . "\\section*{%s}")
+                 ("\\subsection{%s}" . "\\subsection*{%s}")
+                 ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+                 ("\\paragraph{%s}" . "\\paragraph*{%s}")
+                 ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+  (setq org-latex-default-class "prit-report")
+  (setq org-latex-compiler "lualatex"))
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.

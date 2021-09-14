@@ -10,10 +10,10 @@ runtime config/settings.vim
 call plug#begin('~/.vim/plugged')
 runtime config/plugins.vim
 runtime config/languages.vim
-runtime config/completion.vim
 call plug#end()
 
 runtime config/after_plug.vim
+runtime config/completion.vim
 runtime config/aliases.vim
 
 colorscheme apprentice
