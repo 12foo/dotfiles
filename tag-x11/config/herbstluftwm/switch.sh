@@ -19,7 +19,7 @@ case "$1" in
         fi
         ;;
     song)
-        mpc playlist | rofi -p 'jump to song: ' -dmenu -i --only-match -format d | xargs mpc play
+        mpc playlist | rofi -p 'jump to song: ' -dmenu -i -only-match -format d | xargs mpc play
         ;;
     password)
         cd ~/.password-store

@@ -14,6 +14,8 @@
 ;;      Alternatively, press 'gd' (or 'C-c c d') on a module to browse its
 ;;      directory (for easy access to its source code).
 
+(defvar native-comp-deferred-compilation-deny-list nil)
+
 (doom! :input
        ;;chinese
        ;;japanese
@@ -23,7 +25,8 @@
        company           ; the ultimate code completion backend
        ;;helm              ; the *other* search engine for love and life
        ;;ido               ; the other *other* search engine...
-       ivy               ; a search engine for love and life
+       ;;ivy               ; a search engine for love and life
+       vertico
 
        :ui
        ;;deft              ; notational velocity for Emacs
