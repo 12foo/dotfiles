@@ -21,6 +21,8 @@ modes = {
     ],
     'bison': [
         ('default', ['DP-4'], defkb),
+        ('HDMI', ['HDMI-0'], defkb),
+        ('DVI', ['DVI-D-0'], defkb),
     ],
     'tyson': [
         ('default', ['HDMI-0'], defkb),

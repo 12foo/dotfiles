@@ -21,9 +21,6 @@
 
 (setq +lookup-open-url-fn #'+lookup-xwidget-webkit-open-url-fn)
 
-(map! "C-<next>" #'centaur-tabs-forward)
-(map! "C-<prior>" #'centaur-tabs-backward)
-
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
 (setq user-full-name "Philipp Rustemeier"
@@ -54,6 +51,12 @@
 
 (after! scala-mode
         (setq scala-indent:align-parameters nil))
+
+(after! centaur-tabs
+        (map! "C-<next>" #'centaur-tabs-forward)
+        (map! "C-<prior>" #'centaur-tabs-backward)
+        (setq centaur-tabs-set-icons nil))
+        
 
 (after! ox-latex
   (add-to-list 'org-latex-classes

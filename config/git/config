@@ -17,3 +17,5 @@
 [merge]
     ff = only
 
+[init]
+	defaultBranch = main
