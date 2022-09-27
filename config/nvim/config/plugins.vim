@@ -61,6 +61,9 @@ Plug 'majutsushi/tagbar', { 'for': [ 'go', 'rust', 'cpp' ] }
 au FileType go nmap <Leader><Leader> :TagbarOpenAutoClose<Enter>
 au FileType cpp nmap <Leader><Leader> :TagbarOpenAutoClose<Enter>
 
+" snap
+Plug 'L3MON4D3/LuaSnip', {'tag': 'v1.*'}
+
 " the greatest power
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
