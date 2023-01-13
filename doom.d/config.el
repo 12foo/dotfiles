@@ -68,6 +68,7 @@
                         \\usepackage{fontspec}
                         \\usepackage{xcolor}
                         \\usepackage{parskip}
+                        \\usepackage[colorlinks=true, linkcolor=teal]{hyperref}
                         \\usepackage[headsepline,footsepline,automark]{scrlayer-scrpage}
 
                         [DEFAULT-PACKAGES]

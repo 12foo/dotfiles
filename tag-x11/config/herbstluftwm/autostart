@@ -43,7 +43,7 @@ hc keybind $Mod-w spawn sh $CONF/switch.sh password
 hc keybind Mod1-Tab spawn rofi -show window
 hc keybind $Mod-Shift-r reload
 hc keybind $Mod-c close_or_remove
-hc keybind $Mod-Return spawn urxvt
+hc keybind $Mod-Return spawn alacritty
 
 # basic movement
 # focusing clients
