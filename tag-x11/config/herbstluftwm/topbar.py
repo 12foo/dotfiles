@@ -95,7 +95,7 @@ class Filesystems(Widget):
     icon = fg(color['good'], ' %{T2}\ue1e1%{T1} ')
     def render(self):
         df = output_of(self.dfcmd).splitlines()[1:]
-        fs = ((f[0], f[1]) for f in (f.strip().split() for f in df) if not f[0].startswith('/boot'))
+        fs = ((f[0], f[1]) for f in (f.strip().split() for f in df) if not (f[0].startswith('/boot') or f[0].startswith('/var/tmp') or f[0].startswith('/sys')))
         return self.icon + fg(color['muted'], ' | ').join('%s %s' % (f[0], fg(color['muted'], f[1])) for f in fs)
 
 class Battery(Widget):
