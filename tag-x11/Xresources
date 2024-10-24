@@ -72,7 +72,7 @@ UXTerm*renderFont: true
 UXTerm*faceName: JetBrains Mono
 UXTerm*faceSize: 10
 
-rofi.font: JetBrains Mono 10
+rofi.font: Noto Emoji 10
 rofi.padding: 6
 rofi.separator-style: solid
 rofi.hide-scrollbar: true
