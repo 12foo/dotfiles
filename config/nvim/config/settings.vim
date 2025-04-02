@@ -8,7 +8,6 @@ set pumheight=30
 set grepprg=grep\ -nH\ $*
 set linebreak
 set number
-set pastetoggle=<F2>
 set conceallevel=2
 set encoding=utf-8
 
