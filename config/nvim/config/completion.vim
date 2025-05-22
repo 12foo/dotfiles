@@ -34,6 +34,20 @@ lua <<EOF
         c = cmp.mapping.close(),
       }),
       ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+      ['<Tab>'] = cmp.mapping(function(fallback)
+        if cmp.visible() then cmp.confirm({ select = true })
+        else fallback() end
+      end, {'i', 'c'}),
+      ['<C-e>'] = cmp.mapping({
+        i = cmp.mapping.abort(),
+        c = cmp.mapping.close(),
+      }),
+      ['<Down>'] = cmp.mapping(cmp.mapping.select_next_item({
+        behavior = cmp.SelectBehavior.Select
+      }), {'i', 'c'}),
+      ['<Up>'] = cmp.mapping(cmp.mapping.select_prev_item({
+        behavior = cmp.SelectBehavior.Select
+      }), {'i', 'c'}),
     },
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
