@@ -161,6 +161,38 @@ class PulseAudio(Widget):
         else:
             return fg(color['good'], self.icon_loud) + str(self.volume)
 
+
+class PipeWireAudio(Widget):
+    icon_loud = ' \ue05d '
+    icon_mute = ' \ue04f '
+    @staticmethod
+    def available():
+        try:
+            subprocess.run(['wpctl', 'status'], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            return True
+        except:
+            return False
+    def __init__(self, pipe, hooks):
+        self.volume = 0
+        self.mute = False
+    def update(self, line):
+        painfo = output_of(['wpctl', 'get-volume', '@DEFAULT_AUDIO_SINK@']).splitlines()
+        for l in painfo:
+            if 'Volume:' in l:
+                self.volume = int(float(l.split(' ', 2)[1].strip()) * 100)
+                return
+                if '[MUTED]' in l:
+                    self.mute = True
+                else:
+                    self.mute = False
+
+    def render(self):
+        if self.mute:
+            return fg(color['bad'], self.icon_mute) + '--'
+        else:
+            return fg(color['good'], self.icon_loud) + str(self.volume)
+
+
 class Clock(Widget):
     def render(self):
         return '  ' + bg(color['lightbackground'], datetime.datetime.now().strftime('  %a %b %d  %H:%M  '))
