@@ -14,7 +14,7 @@ python $CONF/system_setup.py auto
 hc emit_hook reload
 
 # start a bunch of stuff
-which picom && ((pidof picom && pkill picom && picom --backend glx -b) || picom --backend glx -b)
+which fastcompmgr && ((pidof fastcompmgr && pkill fastcompmgr && fastcompmgr -c -C -e 0.7) || fastcompmgr -c -C -e 0.7)
 # which pulseaudio && ((pidof pulseaudio && pulseaudio -k && pulseaudio -D) || pulseaudio -D)
 # which polybar && ((pidof polybar && polybar -r) || polybar -c $CONF/polybar.conf default &)
 if which lemonbar; then
